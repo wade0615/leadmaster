@@ -13,13 +13,12 @@
           <div class="mb-16">
             <h1 class="font-title text-xl mb-4">{{ title }}</h1>
             <div class="mb-3">
-              <label>Account</label>
               <v-text-field label="Account 帳號" v-model="account"
               ></v-text-field>
             </div>
             <div class="mb-3">
               <label class="flex justify-between">
-                <span>Password</span>
+                <span></span>
                 <span>Forgot password ?</span>
               </label>
               <v-text-field label="Password 帳號" v-model="password"
@@ -37,7 +36,7 @@
           </div>
         </section>
       </main>
-      <footer class="flex-none flex flex-col">
+      <footer class="flex-none flex flex-col wert">
         <span class="text-center">&copy; 1958 - 2009, Michael</span>
         <span class="text-center">Contact us: David@gmail.com</span>
       </footer>
@@ -67,12 +66,7 @@ export default {
   background: url(https://fakeimg.pl/1200x900/?text=David)
   background-size: cover
   background-position: center
-.b-input
-  padding: 0.25rem 0.25rem 0.25rem 0.5rem
-  border: none
-  outline: none
-  opacity: 0.85
-  &:focus
-    box-shadow: none
-    border-bottom: 1px solid #4F4035
+  .v-input
+    margin: 0
+    padding: 0
 </style>
