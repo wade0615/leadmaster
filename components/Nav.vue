@@ -1,5 +1,5 @@
 <template>
-  <div id="nav" class="bg-gray-400">
+  <header id="nav" class="bg-gray-400">
     <section
       class="max-w-screen-xl mx-auto px-6 flex justify-between items-center"
     >
@@ -53,7 +53,7 @@
       </ul>
     </v-navigation-drawer>
     <v-overlay :value="drawer"></v-overlay>
-  </div>
+  </header>
 </template>
 
 <script>
@@ -67,7 +67,7 @@ export default {
 };
 </script>
 
-<style lang="sass" scope>
+<style lang="sass" scoped>
 #nav
   position: sticky
   top: 0

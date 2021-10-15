@@ -60,7 +60,7 @@ export default {
 };
 </script>
 
-<style lang="sass" scope>
+<style lang="sass" scoped>
 #login
   position: relative
   background: url(https://fakeimg.pl/1200x900/?text=David)
