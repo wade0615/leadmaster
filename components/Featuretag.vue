@@ -23,7 +23,7 @@
             w-max
             ml-auto
             px-5 py-1
-            border border-dark
+            border border-gray-900
             uppercase
             no-underline
           "
@@ -53,7 +53,7 @@
         <img
           src="https://fakeimg.pl/1200x900/?text=David1"
           alt="Feature post image"
-          class="w-32 lg:w-1/3 xl:w-2/5"
+          class="w-32 lg:w-1/3 xl:w-2/5 h-24 lg:h-32 object-cover"
         />
         <p class="flex-auto pl-3 md:px-4">
           Feature post description. Feature post description.
@@ -63,7 +63,7 @@
         <img
           src="https://fakeimg.pl/1200x900/?text=David2"
           alt="Feature post image"
-          class="w-32 lg:w-1/3 xl:w-2/5"
+          class="w-32 lg:w-1/3 xl:w-2/5 h-24 lg:h-32 object-cover"
         />
         <p class="flex-auto pl-3 md:px-4">
           Feature post description. Feature post description.
@@ -73,7 +73,7 @@
         <img
           src="https://fakeimg.pl/1200x900/?text=David3"
           alt="Feature post image"
-          class="w-32 lg:w-1/3 xl:w-2/5"
+          class="w-32 lg:w-1/3 xl:w-2/5 h-24 lg:h-32 object-cover"
         />
         <p class="flex-auto pl-3 md:px-4">
           Feature post description. Feature post description.
@@ -90,7 +90,7 @@
           w-full
           ml-auto
           px-5 py-1
-          border border-dark
+          border border-gray-900
           text-center
           uppercase
           no-underline
