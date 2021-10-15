@@ -1,6 +1,7 @@
 <template>
   <main id="home">
     <Carousel :images="images" class="mb-3" />
+    <Featuretag />
     <Tutorial />
   </main>
 </template>

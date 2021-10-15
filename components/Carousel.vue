@@ -9,8 +9,6 @@
         v-for="(image, i) in images"
         :key="i"
         :src="image"
-        reverse-transition="fade-transition"
-        transition="fade-transition"
       >
       </v-carousel-item>
     </v-carousel>
