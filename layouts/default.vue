@@ -2,6 +2,7 @@
   <div id="london">
     <Nav v-show="hidden" />
     <Nuxt />
+    <Footer v-show="hidden" />
   </div>
 </template>
 
