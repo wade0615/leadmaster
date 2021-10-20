@@ -30,11 +30,13 @@
           </div>
         </div>
       </section>
-      <section class="p-2">
+      <section class="pb-1">
         <nav class="mx-auto px-10">
-          <NuxtLink to="/">Home</NuxtLink> |
-          <NuxtLink to="/about">About</NuxtLink> |
-          <NuxtLink to="/login">Login</NuxtLink>
+          <NuxtLink to="/" class="inline-block p-2 md:px-8">Home</NuxtLink>
+          <NuxtLink to="/exhibition" class="inline-block p-2 md:px-8">Exhibition</NuxtLink>
+          <NuxtLink to="/store" class="inline-block p-2 md:px-8">Store A</NuxtLink>
+          <NuxtLink to="/store" class="inline-block p-2 md:px-8">Store B</NuxtLink>
+          <NuxtLink to="/store" class="inline-block p-2 md:px-8">Store C</NuxtLink>
         </nav>
       </section>
     </div>
@@ -86,7 +88,6 @@ export default {
   top: 0
   left: 0
   z-index: 10
-  padding: 1ex 0
   box-shadow: 0px 0px 16px 2px rgb(79 64 53 / 20%)
   section:nth-child(1)
     position: relative
@@ -134,7 +135,7 @@ export default {
         display: block
         padding: 0.75rem 1.25rem
   section:nth-child(2)
-    overflow-x: scroll
+    overflow-x: auto
     nav
       width: max-content
       a

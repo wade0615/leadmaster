@@ -3,7 +3,6 @@
     <Carousel :images="images" class="mb-3" />
     <Featuretag />
     <Features />
-    <!-- <Tutorial /> -->
   </main>
 </template>
 
