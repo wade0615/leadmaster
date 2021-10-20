@@ -1,6 +1,11 @@
 <template>
   <main id="exhibition" class="text-center">
-    <Carousel :images="images" class="md:pt-8 md:px-16 mb-3 h-96" />
+    <div class="max-w-screen-xl mx-auto">
+      <Carousel :images="images"
+        class="md:pt-8 md:px-16 mb-16" style="height: 60vh"
+      />
+      <Promotes class="md:px-20  mb-5" />
+    </div>
   </main>
 </template>
 
@@ -28,5 +33,4 @@ export default {
 <style lang="sass" scoped>
 #exhibition
   position: relative
-  height: 100vh
 </style>
