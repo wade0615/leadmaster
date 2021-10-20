@@ -1,7 +1,7 @@
 <template>
-  <div id="exhibition" class="text-center">
-    exhibition
-  </div>
+  <main id="exhibition" class="text-center">
+    <Carousel :images="images" class="md:pt-8 md:px-16 mb-3 h-96" />
+  </main>
 </template>
 
 <script>
@@ -10,7 +10,13 @@ export default {
   props: [],
   watch: {},
   data() {
-    return {};
+    return {
+      images: [
+        "https://fakeimg.pl/1200x900/?text=David1",
+        "https://fakeimg.pl/1200x900/?text=David2",
+        "https://fakeimg.pl/1200x900/?text=David3",
+      ],
+    };
   },
   computed: {},
   methods: {},

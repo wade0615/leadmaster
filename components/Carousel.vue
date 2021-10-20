@@ -2,7 +2,7 @@
   <section class="carousel">
     <v-carousel
       cycle
-      height="70vh"
+      height="100%"
       hide-delimiter-background
     >
       <v-carousel-item
