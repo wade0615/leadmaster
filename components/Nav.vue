@@ -11,7 +11,7 @@
           <v-avatar class="cursor-pointer" @click.stop="drawer = !drawer">
             <v-icon>mdi-pencil</v-icon>
           </v-avatar>
-          <div class="member-dropdown inline-block">
+          <div class="member-dropdown inline-block" @click.stop="loggedIn">
             <a href="#0">
               <v-avatar>
                 <v-icon dark>
@@ -19,10 +19,13 @@
                 </v-icon>
               </v-avatar>
             </a>
-            <ol class="dropdown-menu">
-              <li class="dropdown-item"><a href="#0">Big Widgets</a></li>
-              <li class="dropdown-item"><a href="#0">Bigger Widgets</a></li>
-              <li class="dropdown-item"><a href="#0">Huge Widgets</a></li>
+            <ol v-if="login" class="dropdown-menu">
+              <li class="dropdown-item"><a href="#0">Settings 設定</a></li>
+              <li class="dropdown-item"><a href="#0">Collection</a></li>
+              <li class="dropdown-item"><NuxtLink to="/login">Log out</NuxtLink></li>
+            </ol>
+            <ol v-else class="dropdown-menu">
+              <li class="dropdown-item"><NuxtLink to="/login">Login 登入/Register 註冊</NuxtLink></li>
             </ol>
           </div>
         </div>
@@ -64,8 +67,16 @@ export default {
   data() {
     return {
       drawer: null,
+      login: true,
     };
   },
+  methods: {
+    loggedIn() {
+      if(!this.login) {
+        this.$router.push({ name: 'login' });
+      };
+    },
+  }
 };
 </script>
 
