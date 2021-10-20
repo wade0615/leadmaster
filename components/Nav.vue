@@ -1,38 +1,40 @@
 <template>
   <header id="nav" class="bg-gray-400">
-    <section
-      class="max-w-screen-xl mx-auto px-6 flex justify-between items-center"
-    >
-      <NuxtLink to="/" class="inline-block">
-        <img src="@/assets/logo.svg" alt="Logo" />
-      </NuxtLink>
-      <div>
-        <v-avatar class="cursor-pointer" @click.stop="drawer = !drawer">
-          <v-icon>mdi-pencil</v-icon>
-        </v-avatar>
-        <div class="member-dropdown inline-block">
-          <a href="#0">
-            <v-avatar>
-              <v-icon dark>
-                mdi-account-circle
-              </v-icon>
-            </v-avatar>
-          </a>
-          <ol class="dropdown-menu">
-            <li class="dropdown-item"><a href="#0">Big Widgets</a></li>
-            <li class="dropdown-item"><a href="#0">Bigger Widgets</a></li>
-            <li class="dropdown-item"><a href="#0">Huge Widgets</a></li>
-          </ol>
+    <div class="max-w-screen-xl mx-auto">
+      <section
+        class="px-6 flex justify-between items-center"
+      >
+        <NuxtLink to="/" class="inline-block">
+          <img src="@/assets/logo.svg" alt="Logo" />
+        </NuxtLink>
+        <div>
+          <v-avatar class="cursor-pointer" @click.stop="drawer = !drawer">
+            <v-icon>mdi-pencil</v-icon>
+          </v-avatar>
+          <div class="member-dropdown inline-block">
+            <a href="#0">
+              <v-avatar>
+                <v-icon dark>
+                  mdi-account-circle
+                </v-icon>
+              </v-avatar>
+            </a>
+            <ol class="dropdown-menu">
+              <li class="dropdown-item"><a href="#0">Big Widgets</a></li>
+              <li class="dropdown-item"><a href="#0">Bigger Widgets</a></li>
+              <li class="dropdown-item"><a href="#0">Huge Widgets</a></li>
+            </ol>
+          </div>
         </div>
-      </div>
-    </section>
-    <section class="p-2">
-      <nav class="mx-auto px-10">
-        <NuxtLink to="/">Home</NuxtLink> |
-        <NuxtLink to="/about">About</NuxtLink> |
-        <NuxtLink to="/login">Login</NuxtLink>
-      </nav>
-    </section>
+      </section>
+      <section class="p-2">
+        <nav class="mx-auto px-10">
+          <NuxtLink to="/">Home</NuxtLink> |
+          <NuxtLink to="/about">About</NuxtLink> |
+          <NuxtLink to="/login">Login</NuxtLink>
+        </nav>
+      </section>
+    </div>
     <v-navigation-drawer
       v-model="drawer"
       fixed
