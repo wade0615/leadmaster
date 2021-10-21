@@ -4,7 +4,7 @@
       <Carousel :images="images"
         class="md:pt-8 md:px-16 mb-16" style="height: 60vh"
       />
-      <Promotes class="px-8 md:px-20 mb-5" />
+      <BigThreePhotoFrame class="px-8 md:px-20 mb-5" />
     </div>
   </main>
 </template>

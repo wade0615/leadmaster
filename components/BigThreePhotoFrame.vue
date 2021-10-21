@@ -1,5 +1,5 @@
 <template>
-  <section id="promotes" class="text-center">
+  <section id="big-three-photo-frame" class="text-center">
     <header class="flex flex-col md:flex-row items-center justify-between">
       <div class="w-full md:w-auto flex items-top">
         <span class="mr-2 text-xl">/</span>
@@ -10,9 +10,9 @@
         <v-icon>mdi-chevron-right</v-icon>
       </div>
     </header>
-    <main class="flex flex-col md:flex-row mt-20">
+    <main class="flex flex-col sm:flex-row mt-20">
       <div v-for="(image, index) in images" :key="'promotes' + index"
-        class="flex-1 px-4 mb-12 md:mb-0"
+        class="flex-1 px-4 mb-12 sm:mb-0"
       >
         <div class="promotes">
           <img
@@ -28,7 +28,7 @@
 
 <script>
 export default {
-  name: "Promotes",
+  name: "BigThreePhotoFrame",
   props: [],
   watch: {},
   data() {
@@ -48,7 +48,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-#promotes
+#big-three-photo-frame
   position: relative
   .promotes
     position: relative
@@ -62,6 +62,6 @@ export default {
   main
     >div:nth-child(2)
       .promotes
-        @include rwd-md
+        @include rwd-sm
           margin-top: -50px
 </style>
