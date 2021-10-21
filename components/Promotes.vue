@@ -1,16 +1,26 @@
 <template>
   <section id="promotes" class="text-center">
-    <header class="flex justify-between mb-20">
-      <span>Feature Arts</span>
-      <span>All Exhibition</span>
+    <header class="flex flex-col md:flex-row items-center justify-between">
+      <div class="w-full md:w-auto flex items-top">
+        <span class="mr-2 text-xl">/</span>
+        <span class="text-2xl">Feature Promotes</span>
+      </div>
+      <div class="w-full md:w-auto justify-end flex items-center">
+        <span class="text-lg">All Promotes</span>
+        <v-icon>mdi-chevron-right</v-icon>
+      </div>
     </header>
-    <main class="flex flex-col md:flex-row">
-      <div v-for="(image, index) in images" :key="'promotes' + index">
-        <img
-          :src="image"
-          alt="Feature image"
-          class="w-full h-80 object-cover"
-        />
+    <main class="flex flex-col md:flex-row mt-20">
+      <div v-for="(image, index) in images" :key="'promotes' + index"
+        class="flex-1 px-4 mb-12 md:mb-0"
+      >
+        <div class="promotes">
+          <img
+            :src="image"
+            alt="Feature image"
+            class="w-full h-full object-cover"
+          />
+        </div>
       </div>
     </main>
   </section>
@@ -40,4 +50,18 @@ export default {
 <style lang="sass" scoped>
 #promotes
   position: relative
+  .promotes
+    position: relative
+    box-shadow: 10px 10px #dadada
+    height: 0%
+    padding-top: 100%
+    img
+      position: absolute
+      top: 0
+      left: 0
+  main
+    >div:nth-child(2)
+      .promotes
+        @include rwd-md
+          margin-top: -50px
 </style>
