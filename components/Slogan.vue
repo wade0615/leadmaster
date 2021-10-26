@@ -1,6 +1,6 @@
 <template>
   <section class="slogan relative bg-gray-100 mt-5">
-    <h3 class="text-4xl">{{ title }}</h3>
+    <h3 class="text-2xl md:text-4xl">{{ title }}</h3>
     <div class="max-w-screen-xl mx-auto pb-12 px-20">
       <div class="pt-10 flex flex-col md:flex-row justify-between">
         <div v-for="(slogan, index) in slogans" :key="'slogan' + index"
