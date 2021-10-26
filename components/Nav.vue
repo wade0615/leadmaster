@@ -8,26 +8,13 @@
           <img src="@/assets/logo.svg" alt="Logo" />
         </NuxtLink>
         <div>
-          <v-avatar class="cursor-pointer" @click.stop="drawer = !drawer">
-            <v-icon>mdi-pencil</v-icon>
-          </v-avatar>
-          <div class="member-dropdown inline-block" @click.stop="loggedIn">
-            <a href="#0">
-              <v-avatar>
-                <v-icon dark>
-                  mdi-account-circle
-                </v-icon>
-              </v-avatar>
-            </a>
-            <ol v-if="login" class="dropdown-menu">
-              <li class="dropdown-item"><a href="#0">Settings 設定</a></li>
-              <li class="dropdown-item"><a href="#0">Collection</a></li>
-              <li class="dropdown-item"><NuxtLink to="/login">Log out</NuxtLink></li>
-            </ol>
-            <ol v-else class="dropdown-menu">
-              <li class="dropdown-item"><NuxtLink to="/login">Login 登入/Register 註冊</NuxtLink></li>
-            </ol>
-          </div>
+          <button @click.stop="clickBurger()"
+            class="hamburger hamburger--collapse" type="button"
+          >
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
         </div>
       </section>
       <section class="pb-1">
@@ -44,20 +31,14 @@
       v-model="drawer"
       fixed
       temporary
-      right
     >
-      <div class="px-3 py-2">哈囉是我啦！</div>
-      <ul>
-        <li>
-          <NuxtLink to="/">Home</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/about">About</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/login">Login</NuxtLink>
-        </li>
-      </ul>
+      <nav class="mx-auto px-10">
+        <NuxtLink to="/" class="inline-block p-2 md:px-8">Home</NuxtLink>
+        <NuxtLink to="/about" class="inline-block p-2 md:px-8">About</NuxtLink>
+        <NuxtLink to="/services" class="inline-block p-2 md:px-8">Services</NuxtLink>
+        <NuxtLink to="/projects" class="inline-block p-2 md:px-8">Projects</NuxtLink>
+        <NuxtLink to="/recruitment" class="inline-block p-2 md:px-8">Recruitment</NuxtLink>
+      </nav>
     </v-navigation-drawer>
     <v-overlay :value="drawer"></v-overlay>
   </header>
@@ -78,6 +59,10 @@ export default {
         this.$router.push({ name: 'login' });
       };
     },
+    clickBurger() {
+      this.drawer = !this.drawer;
+      document.querySelector('.hamburger').classList.add("is-active");
+    }
   }
 };
 </script>
@@ -91,14 +76,14 @@ export default {
   box-shadow: 0px 0px 16px 2px rgb(79 64 53 / 20%)
   section:nth-child(1)
     position: relative
-    &::after
-      content: ""
-      position: absolute
-      top: 100%
-      left: 0
-      width: 100%
-      height: 1px
-      background: #EEE7E1
+    // &::after
+    //   content: ""
+    //   position: absolute
+    //   top: 100%
+    //   left: 0
+    //   width: 100%
+    //   height: 1px
+    //   background: #EEE7E1
     .member-dropdown
       position: relative
       &:hover
