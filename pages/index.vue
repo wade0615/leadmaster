@@ -1,6 +1,6 @@
 <template>
   <main id="home">
-    <Carousel :images="images" class="mb-3" style="height: calc(100vh - 92px)" />
+    <Carousel :images="images" class="mb-3" style="height: calc(100vh - 80px)" />
     <Featuretag />
     <Features />
   </main>
