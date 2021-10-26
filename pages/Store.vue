@@ -20,6 +20,12 @@
     <p>
       本公司客戶群有The Taipei Marriott Hotel,君悅HAYTT飯店,福容飯店,國賓飯店,西華飯店,W hotel,......等國際五星級飯店,都是我們服務配合的客戶企業!
     </p>
+    <ul>
+      <li>服務介紹</li>
+      <li>案例</li>
+      <li>代理商</li>
+      <li>歡迎新血</li>
+    </ul>
   </div>
 </template>
 

@@ -33,8 +33,8 @@
       <section class="pb-1">
         <nav class="mx-auto px-10">
           <NuxtLink to="/" class="inline-block p-2 md:px-8">Home</NuxtLink>
-          <NuxtLink to="/exhibition" class="inline-block p-2 md:px-8">Exhibition</NuxtLink>
-          <NuxtLink to="/store" class="inline-block p-2 md:px-8">Store A</NuxtLink>
+          <NuxtLink to="/services" class="inline-block p-2 md:px-8">Services</NuxtLink>
+          <NuxtLink to="/Projects" class="inline-block p-2 md:px-8">Projects</NuxtLink>
           <NuxtLink to="/store" class="inline-block p-2 md:px-8">Store B</NuxtLink>
           <NuxtLink to="/store" class="inline-block p-2 md:px-8">Store C</NuxtLink>
         </nav>

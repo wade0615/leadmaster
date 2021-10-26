@@ -1,5 +1,5 @@
 <template>
-  <main id="exhibition" class="text-center">
+  <main id="services" class="text-center">
     <Carousel :images="images"
       class="max-w-screen-xl mx-auto md:pt-8 md:px-16 mb-16" style="height: 60vh"
     />
@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: "Exhibition",
+  name: "Services",
   props: [],
   watch: {},
   data() {
@@ -56,6 +56,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-#exhibition
+#services
   position: relative
 </style>

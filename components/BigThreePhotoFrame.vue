@@ -1,5 +1,5 @@
 <template>
-  <section id="big-three-photo-frame" class="text-center">
+  <section id="big-three-photo-frame">
     <header class="flex flex-col md:flex-row items-center justify-between">
       <div class="w-full md:w-auto flex items-top">
         <span class="mr-2 text-xl">/</span>
@@ -59,9 +59,8 @@ export default {
       position: absolute
       top: 0
       left: 0
-  main
-    >div:nth-child(2)
-      .promotes
-        @include rwd-sm
-          margin-top: -50px
+  main > div:nth-child(2)
+    .promotes
+      @include rwd-sm
+        margin-top: -50px
 </style>
