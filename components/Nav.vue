@@ -34,9 +34,8 @@
         <nav class="mx-auto px-10">
           <NuxtLink to="/" class="inline-block p-2 md:px-8">Home</NuxtLink>
           <NuxtLink to="/services" class="inline-block p-2 md:px-8">Services</NuxtLink>
-          <NuxtLink to="/Projects" class="inline-block p-2 md:px-8">Projects</NuxtLink>
-          <NuxtLink to="/store" class="inline-block p-2 md:px-8">Store B</NuxtLink>
-          <NuxtLink to="/store" class="inline-block p-2 md:px-8">Store C</NuxtLink>
+          <NuxtLink to="/projects" class="inline-block p-2 md:px-8">Projects</NuxtLink>
+          <NuxtLink to="/about" class="inline-block p-2 md:px-8">About Us</NuxtLink>
         </nav>
       </section>
     </div>

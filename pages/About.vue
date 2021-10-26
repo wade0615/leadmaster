@@ -1,6 +1,6 @@
 <template>
-  <div id="store" class="text-center">
-    store
+  <div id="about" class="text-center">
+    About
     <p>
       我們專注於台灣尖端的餐飲規劃設計顧問角色,專司於整合整體餐飲空間在Haccp與各國際連鎖飯店的需求上,<br>
       結合水電瓦斯空調消防各個專業領域的人才,在台灣的五星級飯店默默耕耘推動著廚房設備運轉的力量,
@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  name: "Store",
+  name: "About",
   props: [],
   watch: {},
   data() {
@@ -45,7 +45,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-#store
+#about
   position: relative
   height: 100vh
 </style>
