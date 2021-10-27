@@ -8,13 +8,10 @@
 <script>
 export default {
   name: "Banner",
-  props: [],
+  props: ["title", "description"],
   watch: {},
   data() {
-    return {
-      title: "About Us",
-      description: "我們專注於台灣尖端的餐飲規劃設計顧問角色，在台灣的五星級飯店默默耕耘推動著廚房設備運轉的力量",
-    };
+    return {};
   },
   computed: {},
   methods: {},

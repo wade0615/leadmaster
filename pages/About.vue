@@ -1,6 +1,10 @@
 <template>
   <main id="about" class="">
-    <Banner class="max-w-screen-xl mx-auto px-10 py-20" />
+    <Banner
+      :title="banner_title"
+      :description="banner_description"
+      class="max-w-screen-xl mx-auto px-10 py-20"
+    />
     <ImgText
       :img="generalManager_img"
       :title="generalManager_title"
@@ -54,6 +58,8 @@ export default {
   watch: {},
   data() {
     return {
+      banner_title: "About Us",
+      banner_description: "我們專注於台灣尖端的餐飲規劃設計顧問角色，在台灣的五星級飯店默默耕耘推動著廚房設備運轉的力量",
       generalManager_img: "https://fakeimg.pl/900x900/?text=Bryan",
       generalManager_title: "吳介仁 Bryan WU",
       generalManager_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rerum, necessitatibus, non aspernatur dolorum fugit sequi quisquam error reiciendis sit beatae excepturi dicta. Consequuntur consectetur voluptate temporibus doloremque? Natus, sapiente.",
