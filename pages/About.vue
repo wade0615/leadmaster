@@ -2,42 +2,48 @@
   <main id="about" class="">
     <Banner class="max-w-screen-xl mx-auto px-10 py-20" />
     <ImgText
-      :img="imgText_img"
-      :title="imgText_title"
-      :description="imgText_description"
+      :img="generalManager_img"
+      :title="generalManager_title"
+      :description="generalManager_description"
       class="max-w-screen-xl mx-auto p-10 sm:p-20"
     />
     <TextImg
-      :img="textImg_img"
-      :title="textImg_title"
-      :description="textImg_description"
+      :img="team_img"
+      :title="team_title"
+      :description="team_description"
       class="max-w-screen-xl mx-auto p-10 sm:p-20"
     />
-    <p>
-      我們專注於台灣尖端的餐飲規劃設計顧問角色,專司於整合整體餐飲空間在Haccp與各國際連鎖飯店的需求上,<br>
-      結合水電瓦斯空調消防各個專業領域的人才,在台灣的五星級飯店默默耕耘推動著廚房設備運轉的力量,
-    </p>
-    <p>
-      所謂的餐飲規劃包含~酒水吧檯,日本料理,西餐廚房,豪宅型精緻廚具,五星級飯店開放式廚房,大型宴會廳的操作動線規劃,
-    </p>
-    <p>
-      我們代理特殊大型炭烤爐具GRILLWORK'S,德製RATIONAL, M.K.N蒸烤箱,HOBART洗碗機,Manitowoc製冰機,義大利大廠Angelo po西式島型爐具,桌上型6 pan, 10pan蒸烤箱,落地型20 pan, 40 pan蒸烤箱, 蒸氣鍋爐設備,robot coupe食物調理機,Cleveland 大型蒸氣迴轉鍋,ANGELO PO Blast chiller急速冷凍櫃,及麵包房設備大廠 ,
-    </p>
-    <p>
-      我們定期國外看展,安排與建築師及室內設計師開會,協調工地配合事項,
-    </p>
-    <p>
-      本工作相較一般市場工作機會更為專業!學習範圍廣,除專業知識外,公司同事講求Teamwork 相處融洽!歡迎新血加入,公司培訓!
-    </p>
-    <p>
-      本公司客戶群有The Taipei Marriott Hotel,君悅HAYTT飯店,福容飯店,國賓飯店,西華飯店,W hotel,......等國際五星級飯店,都是我們服務配合的客戶企業!
-    </p>
-    <ul>
-      <li>服務介紹</li>
-      <li>案例</li>
-      <li>代理商</li>
-      <li>歡迎新血</li>
-    </ul>
+    <Slogan :title="sloganTitle" :slogans="slogans" />
+    <ImgText
+      :img="maintenance_img"
+      :title="maintenance_title"
+      :description="maintenance_description"
+      class="max-w-screen-xl mx-auto p-10 sm:p-20"
+    />
+    <TextImg
+      :img="observe_img"
+      :title="observe_title"
+      :description="observe_description"
+      class="max-w-screen-xl mx-auto p-10 sm:p-20"
+    />
+    <ImgText
+      :img="design_img"
+      :title="design_title"
+      :description="design_description"
+      class="max-w-screen-xl mx-auto p-10 sm:p-20"
+    />
+    <TextImg
+      :img="style_img"
+      :title="style_title"
+      :description="style_description"
+      class="max-w-screen-xl mx-auto p-10 sm:p-20"
+    />
+    <ImgText
+      :img="ethos_img"
+      :title="ethos_title"
+      :description="ethos_description"
+      class="max-w-screen-xl mx-auto p-10 sm:p-20"
+    />
   </main>
 </template>
 
@@ -48,12 +54,42 @@ export default {
   watch: {},
   data() {
     return {
-      imgText_img: "https://fakeimg.pl/900x900/?text=Bryan",
-      imgText_title: "吳介仁 Bryan WU",
-      imgText_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rerum, necessitatibus, non aspernatur dolorum fugit sequi quisquam error reiciendis sit beatae excepturi dicta. Consequuntur consectetur voluptate temporibus doloremque? Natus, sapiente.",
-      textImg_img: "https://fakeimg.pl/900x900/?text=Our Team",
-      textImg_title: "The Team",
-      textImg_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rerum, necessitatibus, non aspernatur dolorum fugit sequi quisquam error reiciendis sit beatae excepturi dicta. Consequuntur consectetur voluptate temporibus doloremque? Natus, sapiente."
+      generalManager_img: "https://fakeimg.pl/900x900/?text=Bryan",
+      generalManager_title: "吳介仁 Bryan WU",
+      generalManager_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rerum, necessitatibus, non aspernatur dolorum fugit sequi quisquam error reiciendis sit beatae excepturi dicta. Consequuntur consectetur voluptate temporibus doloremque? Natus, sapiente.",
+      team_img: "https://fakeimg.pl/900x900/?text=Our Team",
+      team_title: "The Team",
+      team_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rerum, necessitatibus, non aspernatur dolorum fugit sequi quisquam error reiciendis sit beatae excepturi dicta. Consequuntur consectetur voluptate temporibus doloremque? Natus, sapiente.",
+      sloganTitle: "How we work",
+      slogans: [
+        {
+          icon: "mdi-wrench",
+          text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+        },
+        {
+          icon: "mdi-eye",
+          text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis, possimus!",
+        },
+        {
+          icon: "mdi-lead-pencil",
+          text: "Lorem ipsum dolor sit amet consectetur.",
+        }
+      ],
+      maintenance_img: "https://fakeimg.pl/1200x900/?text=Maintenance",
+      maintenance_title: "維修維護",
+      maintenance_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rerum, necessitatibus, non aspernatur dolorum fugit sequi quisquam error reiciendis sit beatae excepturi dicta. Consequuntur consectetur voluptate temporibus doloremque? Natus, sapiente.",
+      observe_img: "https://fakeimg.pl/900x1200/?text=Observe",
+      observe_title: "規劃提案",
+      observe_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rerum, necessitatibus, non aspernatur dolorum fugit sequi quisquam error reiciendis sit beatae excepturi dicta. Consequuntur consectetur voluptate temporibus doloremque? Natus, sapiente.",
+      design_img: "https://fakeimg.pl/1200x1600/?text=Design",
+      design_title: "空間設計",
+      design_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rerum, necessitatibus, non aspernatur dolorum fugit sequi quisquam error reiciendis sit beatae excepturi dicta. Consequuntur consectetur voluptate temporibus doloremque? Natus, sapiente.",
+      style_img: "https://fakeimg.pl/900x900/?text=Not Just Kitchens",
+      style_title: "Not Just Kitchens",
+      style_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rerum, necessitatibus, non aspernatur dolorum fugit sequi quisquam error reiciendis sit beatae excepturi dicta. Consequuntur consectetur voluptate temporibus doloremque? Natus, sapiente.",
+      ethos_img: "https://fakeimg.pl/900x1200/?text=Ethos",
+      ethos_title: "Our Ethos",
+      ethos_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rerum, necessitatibus, non aspernatur dolorum fugit sequi quisquam error reiciendis sit beatae excepturi dicta. Consequuntur consectetur voluptate temporibus doloremque? Natus, sapiente.",
     };
   },
   computed: {},

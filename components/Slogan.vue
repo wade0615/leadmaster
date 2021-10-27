@@ -1,5 +1,5 @@
 <template>
-  <section class="slogan relative bg-gray-100 mt-5">
+  <section class="slogan relative bg-gray-100 mt-5 text-center">
     <h3 class="text-2xl md:text-4xl">{{ title }}</h3>
     <div class="max-w-screen-xl mx-auto pb-12 px-20">
       <div class="pt-10 flex flex-col md:flex-row justify-between">
