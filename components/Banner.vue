@@ -13,7 +13,7 @@ export default {
   data() {
     return {
       title: "About Us",
-      description: "我們專注於台灣尖端的餐飲規劃設計顧問角色，專司於整合整體餐飲空間在Haccp與各國際連鎖飯店的需求上，結合水電瓦斯空調消防各個專業領域的人才，在台灣的五星級飯店默默耕耘推動著廚房設備運轉的力量。",
+      description: "我們專注於台灣尖端的餐飲規劃設計顧問角色，在台灣的五星級飯店默默耕耘推動著廚房設備運轉的力量",
     };
   },
   computed: {},
@@ -26,4 +26,15 @@ export default {
 <style lang="sass" scoped>
 #banner
   position: relative
+  h2
+    position: relative
+    &::after
+      content: ""
+      position: absolute
+      top: 100%
+      left: 50%
+      width: 10%
+      height: 1px
+      transform: translate(-50%, 0)
+      background-color: #000
 </style>

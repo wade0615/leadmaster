@@ -1,6 +1,6 @@
 <template>
   <div id="about" class="text-center">
-    <Banner class="max-w-screen-xl mx-auto" />
+    <Banner class="max-w-screen-xl mx-auto py-20" />
     About
     <p>
       我們專注於台灣尖端的餐飲規劃設計顧問角色,專司於整合整體餐飲空間在Haccp與各國際連鎖飯店的需求上,<br>
