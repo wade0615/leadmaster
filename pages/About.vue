@@ -1,7 +1,18 @@
 <template>
-  <div id="about" class="text-center">
-    <Banner class="max-w-screen-xl mx-auto py-20" />
-    About
+  <main id="about" class="">
+    <Banner class="max-w-screen-xl mx-auto px-10 py-20" />
+    <ImgText
+      :img="imgText_img"
+      :title="imgText_title"
+      :description="imgText_description"
+      class="max-w-screen-xl mx-auto p-10 sm:p-20"
+    />
+    <TextImg
+      :img="textImg_img"
+      :title="textImg_title"
+      :description="textImg_description"
+      class="max-w-screen-xl mx-auto p-10 sm:p-20"
+    />
     <p>
       我們專注於台灣尖端的餐飲規劃設計顧問角色,專司於整合整體餐飲空間在Haccp與各國際連鎖飯店的需求上,<br>
       結合水電瓦斯空調消防各個專業領域的人才,在台灣的五星級飯店默默耕耘推動著廚房設備運轉的力量,
@@ -27,7 +38,7 @@
       <li>代理商</li>
       <li>歡迎新血</li>
     </ul>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -36,7 +47,14 @@ export default {
   props: [],
   watch: {},
   data() {
-    return {};
+    return {
+      imgText_img: "https://fakeimg.pl/900x900/?text=Bryan",
+      imgText_title: "吳介仁 Bryan WU",
+      imgText_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rerum, necessitatibus, non aspernatur dolorum fugit sequi quisquam error reiciendis sit beatae excepturi dicta. Consequuntur consectetur voluptate temporibus doloremque? Natus, sapiente.",
+      textImg_img: "https://fakeimg.pl/900x900/?text=Our Team",
+      textImg_title: "The Team",
+      textImg_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rerum, necessitatibus, non aspernatur dolorum fugit sequi quisquam error reiciendis sit beatae excepturi dicta. Consequuntur consectetur voluptate temporibus doloremque? Natus, sapiente."
+    };
   },
   computed: {},
   methods: {},
@@ -48,5 +66,5 @@ export default {
 <style lang="sass" scoped>
 #about
   position: relative
-  height: 100vh
+  min-height: 100vh
 </style>
