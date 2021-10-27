@@ -37,7 +37,8 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/style-resources',
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxtjs/google-fonts'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -60,5 +61,12 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  // googleFonts
+  googleFonts: {
+    families: {
+      'Vollkorn': [400, 700],
+    }
   }
 }
