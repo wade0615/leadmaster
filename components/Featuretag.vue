@@ -12,8 +12,9 @@
       "
     >
       <div class="md:col-span-2 md:order-last md:pl-14">
-        <h2 class="mb-3 md:mb-4 text-xl md:text-4xl">{{ title }}</h2>
-        <p class="mb-0 md:mb-4 text-sm md:text-lg">{{ subtitle }}</p>
+        <h2 class="mb-3 md:mb-2 text-xl md:text-4xl">{{ title }}</h2>
+        <p class="mb-3 md:mb-4 text-xl md:text-4xl">{{ subTitle }}</p>
+        <p class="mb-0 md:mb-4 text-sm md:text-lg">{{ description }}</p>
         <a
           href="https://www.youtube.com/"
           target="_blank"
@@ -108,8 +109,9 @@ export default {
   watch: {},
   data() {
     return {
-      title: "Travel to see things different",
-      subtitle: "走出屬於自己的故事",
+      title: "台北西華飯店",
+      subTitle: "The Sherwood Taipei",
+      description: "轉動鑰匙的那一刻、投入最舒適的懷抱，才是回到家的感覺。",
       moreFeature: "discover more",
     };
   },

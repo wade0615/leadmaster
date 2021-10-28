@@ -3,10 +3,10 @@
     <header class="flex flex-col md:flex-row items-center justify-between">
       <div class="w-full md:w-auto flex items-top">
         <span class="mr-2 text-xl">/</span>
-        <span class="text-2xl">Feature Promotes</span>
+        <span class="text-4xl">Feature Agent</span>
       </div>
       <div class="w-full md:w-auto justify-end flex items-center">
-        <span class="text-lg">All Promotes</span>
+        <span class="text-2xl">All Agents</span>
         <v-icon>mdi-chevron-right</v-icon>
       </div>
     </header>
@@ -34,9 +34,9 @@ export default {
   data() {
     return {
       images: [
-        "https://fakeimg.pl/1200x900/?text=Promotes1",
-        "https://fakeimg.pl/1200x900/?text=Promotes2",
-        "https://fakeimg.pl/1200x900/?text=Promotes3",
+        "https://fakeimg.pl/1200x900/?text=Agents1",
+        "https://fakeimg.pl/1200x900/?text=Agents2",
+        "https://fakeimg.pl/1200x900/?text=Agents3",
       ],
     };
   },
