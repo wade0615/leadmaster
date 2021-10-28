@@ -7,15 +7,15 @@ export default [
   },
   {
     title: "RATIONAL",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQt3WNN9tamgPKy_jq2Dx6T_0LL5zufa_haiXJdWG9Rs9CgsxrNiIiTHt6wBnLCWcd8Ls&usqp=CAU",
+    img: "https://i.ytimg.com/vi/N5aOlOmhKMk/maxresdefault.jpg",
     img_alt: "RATIONAL",
     link: "https://www.rational-online.com/en_sg/home/"
   },
   {
     title: "HOBART",
-    img: "https://www.gastronomie-kuehltechnik.de/media/image/product/9336/lg/hobart-haubenspuelmaschine-profi-amx-10b~5.jpg",
+    img: "https://www.hobart.ca/wp-content/uploads/2018/03/advansys-lxe-1.jpg.webp",
     img_alt: "HOBART",
-    link: "https://www.hobartcorp.com/"
+    link: "https://www.hobart.ca/"
   },
   {
     title: "Manitowoc",
