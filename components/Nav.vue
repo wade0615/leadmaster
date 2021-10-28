@@ -7,8 +7,8 @@
         </NuxtLink>
         <nav class="hidden lg:block">
           <NuxtLink to="/about" class="inline-block p-2 md:px-8">About</NuxtLink>
-          <NuxtLink to="/agent" class="inline-block p-2 md:px-8">Agent</NuxtLink>
           <NuxtLink to="/projects" class="inline-block p-2 md:px-8">Projects</NuxtLink>
+          <NuxtLink to="/agent" class="inline-block p-2 md:px-8">Agent</NuxtLink>
           <NuxtLink to="/recruitment" class="inline-block p-2 md:px-8">Recruitment</NuxtLink>
         </nav>
         <div class="lg:hidden">
@@ -32,8 +32,8 @@
       <nav class="mx-auto px-10">
         <NuxtLink to="/" class="block p-2 md:px-8">Home</NuxtLink>
         <NuxtLink to="/about" class="block p-2 md:px-8">About</NuxtLink>
-        <NuxtLink to="/agent" class="block p-2 md:px-8">Agent</NuxtLink>
         <NuxtLink to="/projects" class="block p-2 md:px-8">Projects</NuxtLink>
+        <NuxtLink to="/agent" class="block p-2 md:px-8">Agent</NuxtLink>
         <NuxtLink to="/recruitment" class="block p-2 md:px-8">Recruitment</NuxtLink>
       </nav>
     </v-navigation-drawer>
