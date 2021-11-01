@@ -1,11 +1,12 @@
 <template>
-  <div id="projects" class="text-center">
+  <main id="projects">
     <Banner
       :title="banner_title"
       :description="banner_description"
       class="max-w-screen-xl mx-auto px-10 py-20"
     />
-  </div>
+    <RightJumbotron />
+  </main>
 </template>
 
 <script>
