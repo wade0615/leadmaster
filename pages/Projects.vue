@@ -5,7 +5,10 @@
       :description="banner_description"
       class="max-w-screen-xl mx-auto px-10 py-20"
     />
-    <RightJumbotron />
+    <RightJumbotron class="mb-28" />
+    <LeftJumbotron class="mb-28" />
+    <RightJumbotron class="mb-28" />
+    <LeftJumbotron class="mb-28" />
   </main>
 </template>
 
