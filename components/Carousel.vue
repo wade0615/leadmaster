@@ -4,6 +4,7 @@
       cycle
       height="100%"
       hide-delimiter-background
+      hide-delimiters
     >
       <v-carousel-item
         v-for="(image, i) in images"
@@ -32,11 +33,11 @@ export default {
   .v-window__prev
     display: none
     left: 0
-    @include rwd-sm
-      display: block
+    // @include rwd-sm
+    //   display: block
   .v-window__next
     display: none
     right: 0
-    @include rwd-sm
-      display: block
+    // @include rwd-sm
+    //   display: block
 </style>

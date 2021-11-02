@@ -1,7 +1,10 @@
 <template>
   <main id="home">
     <Carousel :images="images" class="mb-24" style="height: calc(100vh - 80px)" />
-    <h1 class="max-w-screen-xl mx-auto text-5xl text-center py-10 mb-24">
+    <h1 class="max-w-screen-xl mx-auto text-5xl text-center
+      py-10 px-8
+      mb-24"
+    >
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus sunt deserunt dignissimos sint aspernatur quisquam dolorum quod error est expedita!
     </h1>
     <ImgText
@@ -31,6 +34,8 @@
 </template>
 
 <script>
+import introData from "@/assets/mockdata/homeIntro";
+
 export default {
   data() {
     return {
@@ -39,12 +44,12 @@ export default {
         "https://fakeimg.pl/1200x900/?text=David2",
         "https://fakeimg.pl/1200x900/?text=David3",
       ],
-      intro_1_img: "https://fakeimg.pl/900x900/?text=Intro_1",
-      intro_1_title: "Intro_1",
-      intro_1_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rerum, necessitatibus, non aspernatur dolorum fugit sequi quisquam error reiciendis sit beatae excepturi dicta. Consequuntur consectetur voluptate temporibus doloremque? Natus, sapiente.",
-      intro_2_img: "https://fakeimg.pl/900x900/?text=Intro_2",
-      intro_2_title: "Intro_2",
-      intro_2_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rerum, necessitatibus, non aspernatur dolorum fugit sequi quisquam error reiciendis sit beatae excepturi dicta. Consequuntur consectetur voluptate temporibus doloremque? Natus, sapiente.",
+      intro_1_img: introData.intro_1_img,
+      intro_1_title: introData.intro_1_title,
+      intro_1_description: introData.intro_1_description,
+      intro_2_img: introData.intro_2_img,
+      intro_2_title: introData.intro_2_title,
+      intro_2_description: introData.intro_2_description,
       content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga eum quae iusto reiciendis, nam commodi quisquam eveniet omnis consectetur saepe?",
     };
   },
