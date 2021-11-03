@@ -12,8 +12,8 @@
       "
     >
       <div class="md:col-span-2 md:order-last md:pl-14">
-        <h2 class="mb-3 md:mb-2 text-xl md:text-4xl">{{ title }}</h2>
-        <p class="mb-3 md:mb-4 text-xl md:text-4xl">{{ subTitle }}</p>
+        <h2 class="mb-3 md:mb-2 text-3xl md:text-4xl">{{ title }}</h2>
+        <p class="mb-3 md:mb-4 text-2xl md:text-4xl">{{ subtitle }}</p>
         <p class="mb-0 md:mb-4 text-sm md:text-lg">{{ description }}</p>
         <a
           href="https://www.youtube.com/"
@@ -33,8 +33,8 @@
       </div>
       <div class="md:col-span-3">
         <img
-          src="https://fakeimg.pl/1200x900/?text=David"
-          alt="Feature image"
+          :src="img"
+          :alt="img_alt"
           class="w-full h-80 object-cover"
         />
       </div>
@@ -46,39 +46,23 @@
         grid grid-cols-1
         md:grid-cols-2
         xl:grid-cols-3
-        items-center
+        items-start
         mb-10
       "
     >
-      <div class="flex mb-4 md:mb-0">
+      <div v-for="(subFeature, index) in subFeatures" :key="'subFeature' + index"
+        :class="[index === 2 ? 'flex md:hidden xl:flex' : 'flex mb-4 md:mb-0']"
+      >
         <img
-          src="https://fakeimg.pl/1200x900/?text=David1"
-          alt="Feature post image"
+          :src="subFeature.img"
+          :alt="subFeature.img_alt"
           class="w-32 lg:w-1/3 xl:w-2/5 h-24 lg:h-32 object-cover"
         />
-        <p class="flex-auto pl-3 md:px-4">
-          Feature post description. Feature post description.
-        </p>
-      </div>
-      <div class="flex mb-4 md:mb-0">
-        <img
-          src="https://fakeimg.pl/1200x900/?text=David2"
-          alt="Feature post image"
-          class="w-32 lg:w-1/3 xl:w-2/5 h-24 lg:h-32 object-cover"
-        />
-        <p class="flex-auto pl-3 md:px-4">
-          Feature post description. Feature post description.
-        </p>
-      </div>
-      <div class="flex md:hidden xl:flex">
-        <img
-          src="https://fakeimg.pl/1200x900/?text=David3"
-          alt="Feature post image"
-          class="w-32 lg:w-1/3 xl:w-2/5 h-24 lg:h-32 object-cover"
-        />
-        <p class="flex-auto pl-3 md:px-4">
-          Feature post description. Feature post description.
-        </p>
+        <div class="flex-auto pl-3 md:px-4">
+          <h3 class="text-xl xl:text-2xl">{{ subFeature.title }}</h3>
+          <p class="text-lg xl:text-xl">{{ subFeature.subtitle }}</p>
+          <p class="text-sm xl:text-base">{{ subFeature.description }}</p>
+        </div>
       </div>
     </div>
     <div>
@@ -105,19 +89,39 @@
 <script>
 export default {
   name: "FeatureTag",
-  props: [],
-  watch: {},
+  props: ["features"],
+  watch: {
+    features(){
+      this.setFeatures();
+    },
+  },
   data() {
     return {
-      title: "台北西華飯店",
-      subTitle: "The Sherwood Taipei",
-      description: "轉動鑰匙的那一刻、投入最舒適的懷抱，才是回到家的感覺。",
+      title: "",
+      subtitle: "",
+      description: "",
+      img: "",
+      img_alt: "",
+      subFeatures: [],
       moreFeature: "discover more",
     };
   },
   computed: {},
-  methods: {},
-  mounted() {},
+  methods: {
+    setFeatures() {
+      const mainFeature = this.features.slice(0,1)[0];
+      this.title = mainFeature.title;
+      this.subtitle = mainFeature.subtitle;
+      this.description = mainFeature.description;
+      this.img = mainFeature.img;
+      this.img_alt = mainFeature.img_alt;
+
+      this.subFeatures = this.features.slice(1);
+      console.log("🚀 ~ file: Featuretag.vue ~ line 132 ~ setFeatures ~ this.subFeatures", this.subFeatures)
+    },
+  },
+  mounted() {
+  },
   beforeMount() {},
 };
 </script>

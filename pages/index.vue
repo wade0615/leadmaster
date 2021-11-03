@@ -1,7 +1,7 @@
 <template>
   <main id="home">
     <Carousel :images="images" class="mb-24" style="height: calc(100vh - 80px)" />
-    <h1 class="max-w-screen-xl mx-auto text-5xl text-center
+    <h1 class="max-w-screen-xl mx-auto text-3xl md:text-5xl text-center
       py-10 px-8
       mb-24"
     >
@@ -19,7 +19,7 @@
       :description="intro_2_description"
       class="max-w-screen-xl mx-auto p-10 sm:p-20 mb-20"
     />
-    <Featuretag class="mb-52" />
+    <Featuretag :features="projects" class="mb-52" />
     <BigThreePhotoFrame class="max-w-screen-xl mx-auto px-8 md:px-20 pb-5 mb-24" />
     <section class="max-w-screen-xl mx-auto p-20 mb-24 text-center">
       <span class="block mx-auto mb-8 max-w-lg">{{ content }}</span>
@@ -35,6 +35,7 @@
 
 <script>
 import introData from "@/assets/mockdata/homeIntro";
+import projectsData from "@/assets/mockdata/projects";
 
 export default {
   data() {
@@ -50,8 +51,22 @@ export default {
       intro_2_img: introData.intro_2_img,
       intro_2_title: introData.intro_2_title,
       intro_2_description: introData.intro_2_description,
+      projectsData: projectsData,
+      projects: [],
       content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga eum quae iusto reiciendis, nam commodi quisquam eveniet omnis consectetur saepe?",
     };
   },
+  computed: {
+    },
+  methods: {
+    getProjects(projectsData) {
+      const projects = projectsData;
+      return projects.slice(0, 4);
+    },
+  },
+  mounted() {
+    this.projects = this.getProjects(this.projectsData);
+  },
+  beforeMount() {},
 }
 </script>
