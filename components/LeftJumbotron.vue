@@ -3,17 +3,17 @@
     <div class="max-w-screen-xl mx-auto">
       <div class="flex flex-col md:flex-row items-start items-stretch">
         <div class="flex-1">
-          <img :src="img" :alt="title">
+          <img class="w-full h-48 object-cover" :src="img" :alt="title">
         </div>
         <div class="md:w-1/5 relative">
           <div class="text-container px-8 py-4">
-            <h2 class="text-4xl">
+            <h2 class="text-2xl md:text-4xl">
               {{ title }}
             </h2>
-            <p class="text-2xl">
-              {{ subTitle }}
+            <p class="text-xl md:text-2xl">
+              {{ subtitle }}
             </p>
-            <p class="text-lg">
+            <p class="text-base md:text-lg">
               {{ description }}
             </p>
           </div>
@@ -26,14 +26,14 @@
 <script>
 export default {
   name: "LeftJumbotron",
-  props: [],
+  props: ["content"],
   watch: {},
   data() {
     return {
-      title: "LeftJumbotron",
-      subTitle: "LeftJumbotron",
-      description: "LeftJumbotron",
-      img: "https://www.sherwood.com.tw/upload/f2e/banner950x1900/tos1.png"
+      title: this.content.title,
+      subtitle: this.content.subtitle,
+      description: this.content.description,
+      img: this.content.img
     };
   },
   computed: {},
@@ -46,6 +46,9 @@ export default {
 <style lang="sass" scoped>
 .left-jumbotron
   position: relative
+  img
+    @include rwd-md
+      height: 600px
   .text-container
     @include rwd-md
       width: 200%
@@ -53,5 +56,5 @@ export default {
       right: 10%
       top: 40%
       transform: translate(0, -50%)
-      background-color: rgba(229, 231, 235, 0.8)
+      background-color: rgba(229, 231, 235, 0.9)
 </style>
