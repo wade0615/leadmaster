@@ -6,22 +6,34 @@
         <div class="">
           <ul>
             <li>
-              <v-icon>mdi-facebook</v-icon>
-              <span>Facebook</span>
+              <a href="https://www.facebook.com/LiMaiCanYinSheBeiYouXianGongSi" target="_blank">
+                <v-icon>mdi-facebook</v-icon>
+                <span>Facebook</span>
+              </a>
             </li>
             <li>
-              <v-icon>mdi-phone</v-icon>
-              <span>(02)2916-1022</span>
+              <a href="tel:0229161022">
+                <v-icon>mdi-phone</v-icon>
+                <span>(02)2916-1022</span>
+              </a>
             </li>
             <li>
-              <v-icon>mdi-map-marker</v-icon>
-              <span>23141新北市新店區二十張路33巷2弄1號1樓</span>
+              <a href="https://goo.gl/maps/QGZWNmaCro4nnSux8" target="_blank">
+                <v-icon>mdi-map-marker</v-icon>
+                <span>23141新北市新店區二十張路33巷2弄1號1樓</span>
+              </a>
             </li>
           </ul>
         </div>
       </section>
       <section class="text-center">
-        <span class="text-lg">&copy; 2020-2021, David</span>
+        <span class="text-sm">
+          &copy; 2020-2021, Copyright by LeadMasters
+          <a href="https://wade0615.github.io/" target="_blank">
+            Wade
+          </a>
+          . All rights reserved.
+        </span>
       </section>
     </div>
   </footer>
