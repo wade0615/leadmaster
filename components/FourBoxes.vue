@@ -8,13 +8,16 @@
       <div class="px-2 mx-auto mb-10 max-w-screen-sm md:max-w-max w-full"
         v-for="(box, index) in boxes" :key="'box' + index"
       >
-        <a class="inline-block w-full" :href="box.link">
+        <a class="inline-block w-full" :href="box.link" target="_blank">
           <img
             :src="box.img"
             :alt="box.img_alt"
             class="w-full h-40 md:h-72 object-cover mb-4"
           />
           <h3 class="block text-lg">{{ box.title }}</h3>
+          <p class="text-sm md:text-base">
+            {{ box.subtitle }}
+          </p>
         </a>
       </div>
     </section>

@@ -3,7 +3,7 @@
     <div class="max-w-screen-xl mx-auto">
       <div class="flex flex-col md:flex-row items-start items-stretch">
         <div class="flex-1">
-          <img class="w-full h-48 object-cover" :src="img" :alt="title">
+          <img class="w-full h-48 object-cover" :src="img" :alt="img_alt">
         </div>
         <div class="md:w-1/5 relative">
           <div class="text-container px-8 py-4">
@@ -16,6 +16,15 @@
             <p class="text-base md:text-lg">
               {{ description }}
             </p>
+            <a
+              :href="link" target="_blank"
+              class="text-sm flex items-center justify-end"
+            >
+              了解更多
+              <v-icon small>
+                mdi-arrow-right
+              </v-icon>
+            </a>
           </div>
         </div>
       </div>
@@ -33,7 +42,9 @@ export default {
       title: this.content.title,
       subtitle: this.content.subtitle,
       description: this.content.description,
-      img: this.content.img
+      img: this.content.img,
+      img_alt: this.content.img_alt,
+      link: this.content.link,
     };
   },
   computed: {},

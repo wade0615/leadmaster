@@ -15,9 +15,8 @@
         <h2 class="mb-3 md:mb-2 text-3xl md:text-4xl">{{ title }}</h2>
         <p class="mb-3 md:mb-4 text-2xl md:text-4xl">{{ subtitle }}</p>
         <p class="mb-0 md:mb-4 text-sm md:text-lg">{{ description }}</p>
-        <a
-          href="https://www.youtube.com/"
-          target="_blank"
+        <NuxtLink
+          to="/projects"
           class="
             hidden
             md:block
@@ -29,7 +28,7 @@
             no-underline
           "
           >{{ moreFeature }}
-        </a>
+        </NuxtLink>
       </div>
       <div class="md:col-span-3">
         <img
