@@ -1,25 +1,28 @@
 <template>
-  <footer id="footer" class="pt-16 pb-8 px-8 bg-gray-400">
+  <footer id="footer" class="pt-16 pb-8 px-8 text-white">
     <div class="max-w-screen-xl mx-auto">
       <section class="mb-3 flex flex-col md:flex-row md:justify-between md:items-start">
-        <img src="@/assets/logo.svg" alt="Logo" class="w-40 mx-auto mb-8 md:m-0" />
+        <img
+          src="@/assets/image/leadmaster_logo.png" alt="Logo"
+          class="w-28 mx-auto mb-8 md:m-0 pr-px bg-white rounded"
+        />
         <div class="">
           <ul>
-            <li>
+            <li class="p-1">
               <a href="https://www.facebook.com/LiMaiCanYinSheBeiYouXianGongSi" target="_blank">
-                <v-icon>mdi-facebook</v-icon>
+                <v-icon dark>mdi-facebook</v-icon>
                 <span>Facebook</span>
               </a>
             </li>
-            <li>
+            <li class="p-1">
               <a href="tel:0229161022">
-                <v-icon>mdi-phone</v-icon>
+                <v-icon dark>mdi-phone</v-icon>
                 <span>(02)2916-1022</span>
               </a>
             </li>
-            <li>
+            <li class="p-1">
               <a href="https://goo.gl/maps/QGZWNmaCro4nnSux8" target="_blank">
-                <v-icon>mdi-map-marker</v-icon>
+                <v-icon dark>mdi-map-marker</v-icon>
                 <span>23141新北市新店區二十張路33巷2弄1號1樓</span>
               </a>
             </li>
@@ -57,4 +60,5 @@ export default {
 <style lang="sass" scoped>
 #footer
   position: relative
+  background-color: $leadmaster-red
 </style>
