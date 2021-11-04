@@ -41,13 +41,19 @@ import introData from "@/assets/mockdata/homeIntro";
 import projectsData from "@/assets/mockdata/projects";
 import agentsData from "@/assets/mockdata/agents";
 
+import carouselImg_1 from "@/assets/image/design2.jpeg";
+import carouselImg_2 from "@/assets/image/construction.jpeg";
+import carouselImg_3 from "@/assets/image/design.jpeg";
+import carouselImg_4 from "@/assets/image/construction2.jpeg";
+
 export default {
   data() {
     return {
       images: [
-        "https://fakeimg.pl/1200x900/?text=David1",
-        "https://fakeimg.pl/1200x900/?text=David2",
-        "https://fakeimg.pl/1200x900/?text=David3",
+        carouselImg_1,
+        carouselImg_2,
+        carouselImg_3,
+        carouselImg_4
       ],
       intro_1_img: introData.intro_1_img,
       intro_1_title: introData.intro_1_title,
