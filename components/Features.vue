@@ -5,10 +5,10 @@
       <span class="inline-block h-px w-14 bg-yellow-600"></span>
     </section>
     <section class="px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      <div class="px-2 mx-auto mb-10 max-w-screen-sm md:max-w-max"
+      <div class="px-2 mx-auto mb-10 max-w-screen-sm md:max-w-max w-full"
         v-for="(feature, index) in features" :key="'feature' + index"
       >
-        <a class="inline-block" :href="feature.link">
+        <a class="block" :href="feature.link" target="_blank">
           <img
             :src="feature.img"
             :alt="feature.img_alt"
@@ -24,11 +24,10 @@
 <script>
 export default {
   name: "features",
-  props: ["features",],
+  props: ["title", "features",],
   watch: {},
   data() {
     return {
-      title: "Featured",
     };
   },
   computed: {},

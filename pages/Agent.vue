@@ -5,7 +5,7 @@
       :description="banner_description"
       class="max-w-screen-xl mx-auto px-10 py-20"
     />
-    <Features :features="agents" />
+    <Features :title="agentsTitle" :features="agents" />
   </main>
 </template>
 
@@ -20,6 +20,7 @@ export default {
     return {
       banner_title: "All Agents",
       banner_description: "我們代理各式多功能蒸烤箱、西餐爐、對流烤箱等，在本地設備與進口設備的組合上，滿足不同類型不同需求的客戶",
+      agentsTitle: "認識我們代理的品牌",
       agents: agentsData,
     };
   },

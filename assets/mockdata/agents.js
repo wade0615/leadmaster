@@ -13,7 +13,7 @@ export default [
   },
   {
     title: "HOBART",
-    img: "https://www.hobart.ca/wp-content/uploads/2018/03/advansys-lxe-1.jpg.webp",
+    img: "https://cdnimg.webstaurantstore.com/images/guides/945/hobart_trouble_shooting_header.jpg",
     img_alt: "HOBART",
     link: "https://www.hobart.ca/"
   },
@@ -28,5 +28,35 @@ export default [
     img: "https://www.angelopo.com/filestore/images/Show-room/cottura/cucina-piano-unico.jpg",
     img_alt: "Angelo po",
     link: "https://www.angelopo.com/en/"
+  },
+  {
+    title: "Robot Coupe",
+    img: "https://www.robot-coupe.com/robot-coupe-global/products-family/image-thumb__22137__RBC_cover_540_280/Ambiance%20540x420px-Combine.webp",
+    img_alt: "Robot Coupe",
+    link: "https://www.robot-coupe.com/france/fr"
+  },
+  {
+    title: "Cleveland",
+    img: "https://www.welbilt.com/Media/Welbilt-Inc/Our-Brands/Cleveland-2018.jpg",
+    img_alt: "Welbilt Cleveland",
+    link: "https://www.clevelandrange.com/?__hstc=22072164.438bb38c4dd2983cd70767b5736c69da.1635995215710.1635995215710.1635995215710.1&__hssc=22072164.4.1635995215711&__hsfp=3413898664"
+  },
+  {
+    title: "SOUTHBEND",
+    img: "https://www.middleby.com/wp-content/uploads/2021/08/Southbend-K-12-Convection-Ovens-Hero-Image.png",
+    img_alt: "SOUTHBEND",
+    link: "https://southbendnc.com/"
+  },
+  {
+    title: "Blodgett",
+    img: "http://blog.etundra.com/wp-content/Media/2014/11/blodgett-hydrovection-oven.jpg",
+    img_alt: "Blodgett",
+    link: "https://www.blodgett.com/"
+  },
+  {
+    title: "Pitco",
+    img: "https://www.middleby.com/wp-content/uploads/2021/08/Middleby-Pitco-CU-Hero-Image.png",
+    img_alt: "Pitco",
+    link: "https://www.pitco.com/"
   },
 ]

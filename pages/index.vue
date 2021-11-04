@@ -20,7 +20,10 @@
       class="max-w-screen-xl mx-auto p-10 sm:p-20 mb-20"
     />
     <Featuretag :features="projects" class="mb-52" />
-    <BigThreePhotoFrame class="max-w-screen-xl mx-auto px-8 md:px-20 pb-5 mb-24" />
+    <BigThreePhotoFrame
+      :images="agents"
+      class="max-w-screen-xl mx-auto px-8 md:px-20 pb-5 mb-24"
+    />
     <section class="max-w-screen-xl mx-auto p-20 mb-24 text-center">
       <span class="block mx-auto mb-8 max-w-lg">{{ content }}</span>
       <v-btn
@@ -36,6 +39,7 @@
 <script>
 import introData from "@/assets/mockdata/homeIntro";
 import projectsData from "@/assets/mockdata/projects";
+import agentsData from "@/assets/mockdata/agents";
 
 export default {
   data() {
@@ -53,6 +57,8 @@ export default {
       intro_2_description: introData.intro_2_description,
       projectsData: projectsData,
       projects: [],
+      agentsData: agentsData,
+      agents: [],
       content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga eum quae iusto reiciendis, nam commodi quisquam eveniet omnis consectetur saepe?",
     };
   },
@@ -63,9 +69,14 @@ export default {
       const projects = projectsData;
       return projects.slice(0, 4);
     },
+    getAgents(agentsData) {
+      const agents = agentsData;
+      return agents.slice(0, 3);
+    },
   },
   mounted() {
     this.projects = this.getProjects(this.projectsData);
+    this.agents = this.getAgents(this.agentsData);
   },
   beforeMount() {},
 }

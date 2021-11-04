@@ -116,7 +116,6 @@ export default {
       this.img_alt = mainFeature.img_alt;
 
       this.subFeatures = this.features.slice(1);
-      console.log("🚀 ~ file: Featuretag.vue ~ line 132 ~ setFeatures ~ this.subFeatures", this.subFeatures)
     },
   },
   mounted() {

@@ -5,10 +5,10 @@
         <span class="mr-2 text-xl">/</span>
         <span class="text-4xl">Feature Agent</span>
       </div>
-      <div class="w-full md:w-auto justify-end flex items-center">
+      <NuxtLink to="/agent" class="w-full md:w-auto justify-end flex items-center">
         <span class="text-2xl">All Agents</span>
         <v-icon>mdi-chevron-right</v-icon>
-      </div>
+      </NuxtLink>
     </header>
     <main class="flex flex-col sm:flex-row mt-20">
       <div v-for="(image, index) in images" :key="'promotes' + index"
@@ -16,8 +16,8 @@
       >
         <div class="promotes">
           <img
-            :src="image"
-            alt="Feature image"
+            :src="image.img"
+            :alt="image.img_alt"
             class="w-full h-full object-cover"
           />
         </div>
@@ -29,15 +29,15 @@
 <script>
 export default {
   name: "BigThreePhotoFrame",
-  props: [],
+  props: ["images"],
   watch: {},
   data() {
     return {
-      images: [
-        "https://fakeimg.pl/1200x900/?text=Agents1",
-        "https://fakeimg.pl/1200x900/?text=Agents2",
-        "https://fakeimg.pl/1200x900/?text=Agents3",
-      ],
+      // images: [
+      //   "https://fakeimg.pl/1200x900/?text=Agents1",
+      //   "https://fakeimg.pl/1200x900/?text=Agents2",
+      //   "https://fakeimg.pl/1200x900/?text=Agents3",
+      // ],
     };
   },
   computed: {},
