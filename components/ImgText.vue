@@ -8,11 +8,11 @@
           class="w-full h-full object-cover"
         />
       </div>
-      <div class="flex-1 px-8 sm:px-16">
-        <h3 class="text-2xl">
+      <div class="flex-1 px-4 sm:px-16">
+        <h3 class="mb-2 sm:mb-4 text-2xl">
           {{ title }}
         </h3>
-        <p class="text-lg">
+        <p class="text-base sm:text-lg">
           {{ description }}
         </p>
       </div>

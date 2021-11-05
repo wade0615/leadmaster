@@ -52,6 +52,9 @@
 </template>
 
 <script>
+import bossImg from "@/assets/image/boss.jpeg";
+import teamTmg from "@/assets/image/team.jpeg";
+
 export default {
   name: "About",
   props: [],
@@ -60,12 +63,12 @@ export default {
     return {
       banner_title: "About Us",
       banner_description: "我們專注於台灣尖端的餐飲規劃設計顧問角色，在台灣的五星級飯店默默耕耘推動著廚房設備運轉的力量",
-      generalManager_img: "https://fakeimg.pl/900x900/?text=Bryan",
+      generalManager_img: bossImg,
       generalManager_title: "吳介仁 Bryan WU",
-      generalManager_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rerum, necessitatibus, non aspernatur dolorum fugit sequi quisquam error reiciendis sit beatae excepturi dicta. Consequuntur consectetur voluptate temporibus doloremque? Natus, sapiente.",
-      team_img: "https://fakeimg.pl/900x900/?text=Our Team",
+      generalManager_description: "立麥餐飲設備有限公司 總經理，在業界擁有超過 20 年的規劃、設計、施工經驗，教育並帶領公司團隊不斷挑戰不同的大型飯店專案，持續為成為業界首屈一指的飯店餐飲設計顧問而積極推動公司成長。",
+      team_img: teamTmg,
       team_title: "The Team",
-      team_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rerum, necessitatibus, non aspernatur dolorum fugit sequi quisquam error reiciendis sit beatae excepturi dicta. Consequuntur consectetur voluptate temporibus doloremque? Natus, sapiente.",
+      team_description: "我們在成立短短幾年時間內，憑藉專業完整的規劃設計、精密快速的施工品質，以及良好的售後服務，迅速獲得客戶的肯定與嘉許。我們的案子由技術嫻熟的團隊規劃和施工。員工對於企業各個方面的成功至關重要，他們訓練有素，知識淵博，並為自己的工作感到自豪。",
       sloganTitle: "How we work",
       slogans: [
         {
@@ -86,13 +89,13 @@ export default {
       maintenance_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rerum, necessitatibus, non aspernatur dolorum fugit sequi quisquam error reiciendis sit beatae excepturi dicta. Consequuntur consectetur voluptate temporibus doloremque? Natus, sapiente.",
       observe_img: "https://fakeimg.pl/900x1200/?text=Observe",
       observe_title: "規劃提案",
-      observe_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rerum, necessitatibus, non aspernatur dolorum fugit sequi quisquam error reiciendis sit beatae excepturi dicta. Consequuntur consectetur voluptate temporibus doloremque? Natus, sapiente.",
+      observe_description: "所謂的餐飲規劃包含~酒水吧檯,日本料理,西餐廚房,豪宅型精緻廚具,五星級飯店開放式廚房,大型宴會廳的操作動線規劃,",
       design_img: "https://fakeimg.pl/1200x1600/?text=Design",
       design_title: "空間設計",
       design_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rerum, necessitatibus, non aspernatur dolorum fugit sequi quisquam error reiciendis sit beatae excepturi dicta. Consequuntur consectetur voluptate temporibus doloremque? Natus, sapiente.",
       style_img: "https://fakeimg.pl/900x900/?text=Not Just Kitchens",
       style_title: "Not Just Kitchens",
-      style_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rerum, necessitatibus, non aspernatur dolorum fugit sequi quisquam error reiciendis sit beatae excepturi dicta. Consequuntur consectetur voluptate temporibus doloremque? Natus, sapiente.",
+      style_description: "我們從事關於大型飯店餐廳廚房設備工程的工程規劃設計及施工，專司廚房工程顧問性質，負責規劃-設計-施工廚房內部動線與機器操作。",
       ethos_img: "https://fakeimg.pl/900x1200/?text=Ethos",
       ethos_title: "Our Ethos",
       ethos_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rerum, necessitatibus, non aspernatur dolorum fugit sequi quisquam error reiciendis sit beatae excepturi dicta. Consequuntur consectetur voluptate temporibus doloremque? Natus, sapiente.",

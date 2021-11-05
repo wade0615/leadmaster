@@ -9,6 +9,9 @@
         <div class="">
           <ul>
             <li class="p-1">
+              LEADMASTER KITCHEN EQUIPMENT CO., LTD.
+            </li>
+            <li class="p-1">
               <a href="https://www.facebook.com/LiMaiCanYinSheBeiYouXianGongSi" target="_blank">
                 <v-icon dark>mdi-facebook</v-icon>
                 <span>Facebook</span>
@@ -18,6 +21,12 @@
               <a href="tel:0229161022">
                 <v-icon dark>mdi-phone</v-icon>
                 <span>(02)2916-1022</span>
+              </a>
+            </li>
+            <li class="p-1">
+              <a href="mailto:bryanwu088@gmail.com">
+                <v-icon dark>mdi-gmail</v-icon>
+                <span>bryanwu088@gmail.com</span>
               </a>
             </li>
             <li class="p-1">
