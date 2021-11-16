@@ -4,7 +4,7 @@
     <h1
       class="
         max-w-screen-xl mx-auto
-        text-2xl md:text-4xl text-center italic
+        text-2xl md:text-4xl text-center italic tracking-wider
         py-10 px-8
         mb-18 md:mb-24
       "
