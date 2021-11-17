@@ -25,7 +25,7 @@ export default [
   },
   {
     title: "Angelo po",
-    img: "https://www.angelopo.com/filestore/images/Show-room/cottura/cucina-piano-unico.jpg",
+    img: "https://www.monolithe.it/images/slider_home/img1.jpg",
     img_alt: "Angelo po",
     link: "https://www.angelopo.com/en/"
   },
