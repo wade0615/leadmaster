@@ -19,7 +19,13 @@
     <h2 class="max-w-screen-xl mx-auto px-10 sm:px-20 py-8">
       目前開放職缺：
     </h2>
-    <ExpansionPanels class="max-w-screen-xl mx-auto px-10 sm:px-20 pb-10" />
+    <ExpansionPanels :expansions="recruitments"
+      class="max-w-screen-xl mx-auto px-10 sm:px-20 pb-10"
+      v-if="recruitments.length > 0"
+    />
+    <p v-else class="max-w-screen-xl mx-auto px-10 sm:px-20">
+      目前沒有開放職缺唷！感謝您！有任何興趣還是歡迎來信詢問
+    </p>
   </main>
 </template>
 
@@ -32,7 +38,16 @@ export default {
     return {
       banner_title: "We Are Hiring",
       banner_description: "我們關注員工發展，團隊合作一直是我們的工作常態，期許讓員工與公司一起成長。",
-      content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga eum quae iusto reiciendis, nam commodi quisquam eveniet omnis consectetur saepe?",
+      recruitments: [
+        {
+          title: "設備維修工程師",
+          descriptions: ["設備維護與安裝", "40000/月 以上"]
+        },
+        {
+          title: "專案設計工程師",
+          descriptions: ["空間設計與專案規劃", "40000/月 以上"]
+        },
+      ]
     };
   },
   computed: {},
