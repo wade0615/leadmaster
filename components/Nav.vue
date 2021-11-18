@@ -30,13 +30,19 @@
       v-model="drawer"
       fixed
       temporary
+      class="navigation-drawer px-14 py-16"
     >
-      <nav class="mx-auto px-10">
-        <NuxtLink to="/" class="block p-2 md:px-8">Home</NuxtLink>
-        <NuxtLink to="/about" class="block p-2 md:px-8">About</NuxtLink>
-        <NuxtLink to="/projects" class="block p-2 md:px-8">Projects</NuxtLink>
-        <NuxtLink to="/agent" class="block p-2 md:px-8">Agent</NuxtLink>
-        <NuxtLink to="/recruitment" class="block p-2 md:px-8">Recruitment</NuxtLink>
+      <NuxtLink to="/" class="block mx-auto w-24 mb-8">
+        <img src="@/assets/image/leadmaster_logo.png" alt="Logo"
+          class="inline-block bg-white rounded"
+        />
+      </NuxtLink>
+      <nav class="mx-auto text-white text-2xl">
+        <NuxtLink to="/" class="block mb-2 p-2">Home</NuxtLink>
+        <NuxtLink to="/about" class="block mb-2 p-2">About</NuxtLink>
+        <NuxtLink to="/projects" class="block mb-2 p-2">Projects</NuxtLink>
+        <NuxtLink to="/agent" class="block mb-2 p-2">Agent</NuxtLink>
+        <NuxtLink to="/recruitment" class="block mb-2 p-2">Recruitment</NuxtLink>
       </nav>
     </v-navigation-drawer>
     <v-overlay :value="drawer"></v-overlay>
@@ -76,4 +82,6 @@ export default {
     border: 1px solid white
     border-radius: 3px
     box-shadow: 0 0 0 3px #da1b0a inset
+  .navigation-drawer
+    background-color: $leadmaster-red
 </style>
