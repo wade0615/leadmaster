@@ -31,7 +31,7 @@
       fixed
       temporary
     >
-      <nav class="mx-auto px-10">
+      <nav class="mx-auto px-10 text-black">
         <NuxtLink to="/" class="block p-2 md:px-8">Home</NuxtLink>
         <NuxtLink to="/about" class="block p-2 md:px-8">About</NuxtLink>
         <NuxtLink to="/projects" class="block p-2 md:px-8">Projects</NuxtLink>
