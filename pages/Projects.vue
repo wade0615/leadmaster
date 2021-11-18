@@ -22,6 +22,9 @@ import projectsData from "@/assets/mockdata/projects";
 
 export default {
   name: "Projects",
+  head: {
+    title: "我們的客戶｜立麥餐飲設備有限公司"
+  },
   props: [],
   watch: {},
   data() {

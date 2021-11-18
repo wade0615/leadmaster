@@ -32,6 +32,9 @@
 <script>
 export default {
   name: "Recruitment",
+  head: {
+    title: "職缺招募｜立麥餐飲設備有限公司"
+  },
   props: [],
   watch: {},
   data() {

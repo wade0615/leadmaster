@@ -6,7 +6,12 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'format-detection', content: 'telephone=no' },
+      { name: 'format-detection', content: 'telephone=no' },
+      { property: 'og:title', content: 'Leadmaster 立麥餐飲設備有限公司' },
+      { property: 'og:description', content: '我們從事關於大型飯店餐廳廚房設備工程的工程規劃設計及施工，專司廚房工程顧問性質，負責規劃-設計-施工廚房內部動線與機器操作' },
+      { property: 'og:site_name', content: '餐飲設備規劃公司' },
+      { property: 'og:locale', content: 'zh_TW' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/logo.ico' }

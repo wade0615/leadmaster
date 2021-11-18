@@ -14,6 +14,9 @@ import agentsData from "@/assets/mockdata/agents";
 
 export default {
   name: "Agent",
+  head: {
+    title: "代理商｜立麥餐飲設備有限公司"
+  },
   props: [],
   watch: {},
   data() {

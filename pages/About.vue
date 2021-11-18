@@ -62,6 +62,9 @@ import ethosImg from "@/assets/image/ethos.jpeg";
 
 export default {
   name: "About",
+  head: {
+    title: "關於我們｜立麥餐飲設備有限公司"
+  },
   props: [],
   watch: {},
   data() {
