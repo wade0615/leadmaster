@@ -68,5 +68,7 @@ export default {
     families: {
       'Vollkorn': [400, 700],
     }
-  }
+  },
+
+  target: 'static'
 }
