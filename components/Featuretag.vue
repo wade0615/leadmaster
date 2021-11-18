@@ -65,9 +65,8 @@
       </div>
     </div>
     <div>
-      <a
-        href="https://www.youtube.com/"
-        target="_blank"
+      <NuxtLink
+        to="/projects"
         class="
           block
           md:hidden
@@ -80,7 +79,7 @@
           no-underline
         "
         >{{ moreFeature }}
-      </a>
+      </NuxtLink>
     </div>
   </section>
 </template>
