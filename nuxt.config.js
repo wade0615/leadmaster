@@ -12,7 +12,7 @@ export default {
       { hid: 'og:description', property: 'og:description', content: '立麥餐飲設備有限公司從事關於大型飯店餐廳廚房設備工程的工程規劃設計及施工，專司廚房工程顧問性質，負責規劃-設計-施工廚房內部動線與機器操作' },
       { hid: 'og:site_name', property: 'og:site_name', content: '餐飲設備規劃公司' },
       { hid: 'og:locale', property: 'og:locale', content: 'zh_TW' },
-      { hid: 'og:image', property: 'og:image', content: 'https://leadmaster.netlify.app/leadmaster_logo2.png' }
+      { hid: 'og:image', property: 'og:image', content: '/og_img.png' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
