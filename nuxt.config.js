@@ -15,7 +15,7 @@ export default {
       { hid: 'og:image', property: 'og:image', content: 'https://leadmaster.netlify.app/leadmaster_logo2.png' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/logo.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
 
