@@ -8,11 +8,11 @@ export default {
       { hid: 'description', name: 'description', content: '立麥餐飲設備有限公司從事關於大型飯店餐廳廚房設備工程的工程規劃設計及施工，專司廚房工程顧問性質，負責規劃-設計-施工廚房內部動線與機器操作' },
       { name: 'format-detection', content: 'telephone=no' },
       { name: 'format-detection', content: 'telephone=no' },
-      { hid: 'og:title', content: 'Leadmaster 立麥餐飲設備有限公司' },
-      { hid: 'og:description', content: '立麥餐飲設備有限公司從事關於大型飯店餐廳廚房設備工程的工程規劃設計及施工，專司廚房工程顧問性質，負責規劃-設計-施工廚房內部動線與機器操作' },
-      { hid: 'og:site_name', content: '餐飲設備規劃公司' },
-      { hid: 'og:locale', content: 'zh_TW' },
-      { hid: 'og:image', content: '/logo.ico' }
+      { hid: 'og:title', property: 'og:title', content: 'Leadmaster 立麥餐飲設備有限公司' },
+      { hid: 'og:description', property: 'og:description', content: '立麥餐飲設備有限公司從事關於大型飯店餐廳廚房設備工程的工程規劃設計及施工，專司廚房工程顧問性質，負責規劃-設計-施工廚房內部動線與機器操作' },
+      { hid: 'og:site_name', property: 'og:site_name', content: '餐飲設備規劃公司' },
+      { hid: 'og:locale', property: 'og:locale', content: 'zh_TW' },
+      { hid: 'og:image', property: 'og:image', content: '@/assets/image/leadmaster_logo2.png' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/logo.ico' }
