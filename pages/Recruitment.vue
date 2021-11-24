@@ -23,7 +23,7 @@
       class="max-w-screen-xl mx-auto px-10 sm:px-20 pb-10"
       v-if="recruitments.length > 0"
     />
-    <p v-else class="max-w-screen-xl mx-auto px-10 sm:px-20">
+    <p v-else class="max-w-screen-xl mx-auto p-10 sm:p-20">
       目前沒有開放職缺唷！感謝您！有任何興趣還是歡迎來信詢問
     </p>
   </main>
