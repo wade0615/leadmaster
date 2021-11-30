@@ -13,7 +13,8 @@ export default {
       { hid: 'og:site_name', property: 'og:site_name', content: '餐飲設備規劃公司' },
       { hid: 'og:locale', property: 'og:locale', content: 'zh_TW' },
       { hid: 'og:image', property: 'og:image', content: '/og_img.png' },
-      { name: 'google-site-verification', content: 'x1KDy2SSiRcOMjKFhI-ng2n7X_HosHVl8Wygn_ptFHg' }
+      { name: 'google-site-verification', content: 'x1KDy2SSiRcOMjKFhI-ng2n7X_HosHVl8Wygn_ptFHg' },
+      { name: 'google-site-verification', content: 'bwRWjYXKfqqFwRx-6dhFK3u1gYLu0Qdex0AeriE1Msk' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
