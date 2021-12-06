@@ -1,7 +1,10 @@
 <template>
   <main id="home">
-    <Carousel :images="images" class="mb-20 md:mb-24" style="height: calc(100vh - 80px)" />
-    <h1
+    <Carousel
+      :images="carousel_images" :text="carousel_text"
+      class="mb-20 md:mb-24" style="height: calc(100vh - 80px)"
+    />
+    <h2
       class="
         max-w-screen-xl mx-auto
         text-2xl md:text-4xl text-center italic tracking-wider
@@ -9,7 +12,7 @@
         mb-18 md:mb-24
       "
       v-html="intro_content"
-    ></h1>
+    ></h2>
     <ImgText
       :img="intro_1_img"
       :title="intro_1_title"
@@ -54,12 +57,17 @@ import carouselImg_4 from "@/assets/image/construction2.jpeg";
 export default {
   data() {
     return {
-      images: [
+      carousel_images: [
         carouselImg_1,
         carouselImg_2,
         carouselImg_3,
         carouselImg_4
       ],
+      carousel_text: {
+        title: "立麥餐飲設備",
+        title2: "LEADMASTER KITCHEN",
+        subtitle: "最專業的酒店廚房規劃顧問",
+      },
       intro_content: "我們從事關於大型飯店餐廳廚房設備工程的工程規劃設計及施工<br>專司廚房工程顧問性質，負責規劃-設計-施工廚房內部動線與機器操作",
       intro_1_img: introData.intro_1_img,
       intro_1_title: introData.intro_1_title,
