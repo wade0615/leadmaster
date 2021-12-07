@@ -15,22 +15,25 @@
     </v-carousel>
     <div class="cover-text">
       <div class="
+        h-full text-center
         max-w-screen-xl mx-auto
         p-10 sm:p-20 pt-24 sm:pt-36
+        flex items-center justify-center
       ">
-        <h2 class="
-          break-words sm:break-normal
-          font-bold
-          text-4xl sm:text-5xl
-          mb-8
-        ">
-          {{ text.title }}
-          <br>
-          {{ text.title2 }}
-        </h2>
-        <p class="font-bold text-lg">
-          {{ text.subtitle }}
-        </p>
+        <div class="tracking-wider font-bold">
+          <h2 class="
+            break-words sm:break-normal
+            text-4xl sm:text-5xl
+            mb-8
+          ">
+            {{ text.title }}
+            <br>
+            {{ text.title2 }}
+          </h2>
+          <p class="text-lg">
+            {{ text.subtitle }}
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -70,7 +73,7 @@ export default {
     width: 100%
     height: 100%
     z-index: 1
-    background: linear-gradient(135deg, rgba(255, 219, 219, 1), rgba(255, 255, 255, .5))
+    background: linear-gradient(0deg, rgba(255, 219, 219, 1) 20%, rgba(255, 255, 255, .5))
   .cover-text
     position: absolute
     top: 0
