@@ -6,15 +6,21 @@
       class="max-w-screen-xl mx-auto px-10 py-20"
     />
     <ImgText
-      :img="generalManager_img"
-      :title="generalManager_title"
-      :description="generalManager_description"
-      class="max-w-screen-xl mx-auto p-10 sm:p-20"
-    />
-    <TextImg
       :img="team_img"
       :title="team_title"
       :description="team_description"
+      class="max-w-screen-xl mx-auto p-10 sm:p-20"
+    />
+    <TextImg
+      :img="intro_1_img"
+      :title="intro_1_title"
+      :description="intro_1_description"
+      class="max-w-screen-xl mx-auto p-10 sm:p-20"
+    />
+    <ImgText
+      :img="intro_2_img"
+      :title="intro_2_title"
+      :description="intro_2_description"
       class="max-w-screen-xl mx-auto p-10 sm:p-20"
     />
     <Slogan :title="sloganTitle" :slogans="slogans" />
@@ -65,9 +71,12 @@ export default {
     return {
       banner_title: "About Us",
       banner_description: "我們專注於台灣尖端的餐飲規劃設計顧問角色，在台灣的五星級飯店默默耕耘推動著廚房設備運轉的力量",
-      generalManager_img: aboutData.generalManager.img,
-      generalManager_title: aboutData.generalManager.title,
-      generalManager_description: aboutData.generalManager.description,
+      intro_1_img: aboutData.intro_1.img,
+      intro_1_title: aboutData.intro_1.title,
+      intro_1_description: aboutData.intro_1.description,
+      intro_2_img: aboutData.intro_2.img,
+      intro_2_title: aboutData.intro_2.title,
+      intro_2_description: aboutData.intro_2.description,
       team_img: aboutData.team.img,
       team_title: aboutData.team.title,
       team_description: aboutData.team.description,
