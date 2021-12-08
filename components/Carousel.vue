@@ -78,7 +78,7 @@ export default {
   &::before
     top: 0
     height: 100%
-    background: linear-gradient(0deg, rgba(255, 219, 219, 1) 20%, rgba(255, 255, 255, .5))
+    background: linear-gradient(10deg, rgba(255, 219, 219, 1) 20%, rgba(255, 255, 255, .5))
   &::after
     top: 100%
     height: 15%
