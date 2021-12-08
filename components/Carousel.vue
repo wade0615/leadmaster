@@ -13,9 +13,9 @@
       >
       </v-carousel-item>
     </v-carousel>
-    <div class="cover-text">
+    <div class="cover-text text-center">
       <div class="
-        h-full text-center
+        h-full
         max-w-screen-xl mx-auto
         p-10 sm:p-20 pt-24 sm:pt-36
         flex items-center justify-center
@@ -35,7 +35,9 @@
           </p>
         </div>
       </div>
+      <a href="#scroll-down"><span></span></a>
     </div>
+    <div id="scroll-down"></div>
   </section>
 </template>
 
@@ -46,8 +48,20 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    scrollToButton() {
+      document.querySelector(".cover-text a").addEventListener("click", (e)=>{
+        e.preventDefault();
+        window.scrollTo({
+          top: document.querySelector("#scroll-down").offsetTop,
+          left: 0,
+          behavior: 'smooth',
+        });
+      });
+    }
+  },
   mounted() {
+    this.scrollToButton();
   },
 };
 </script>
@@ -55,6 +69,20 @@ export default {
 <style lang="sass" scoped>
 .carousel::v-deep
   position: relative
+  &::before, &::after
+    content: ''
+    position: absolute
+    left: 0
+    width: 100%
+    z-index: 1
+  &::before
+    top: 0
+    height: 100%
+    background: linear-gradient(0deg, rgba(255, 219, 219, 1) 20%, rgba(255, 255, 255, .5))
+  &::after
+    top: 100%
+    height: 15%
+    background: linear-gradient(180deg, rgba(255, 219, 219, 1) 10%, rgba(255, 255, 255, .5))
   .v-window__prev
     display: none
     left: 0
@@ -65,15 +93,6 @@ export default {
     right: 0
     // @include rwd-sm
     //   display: block
-  &::after
-    content: ''
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
-    z-index: 1
-    background: linear-gradient(0deg, rgba(255, 219, 219, 1) 20%, rgba(255, 255, 255, .5))
   .cover-text
     position: absolute
     top: 0
@@ -89,8 +108,33 @@ export default {
       animation-fill-mode: forwards
     h2
       animation-delay: 2s
+      position: relative
+      &::after
+        content: ''
+        position: absolute
+        top: 110%
+        left: 50%
+        width: 20%
+        height: 3px
+        transform: translateX(-50%)
+        z-index: 1
+        background-color: $leadmaster-red
     p
       animation-delay: 3s
+    > a
+      position: relative
+      display: inline-block
+      font-size: 0
+      transform: translateY(-60px)
+      animation: scrollDown-upAndDown 1.5s infinite
+      span
+        display: inline-block
+        width: 24px
+        height: 24px
+        border-left: 3px solid #fff
+        border-bottom: 3px solid #fff
+        transform: rotate(-45deg)
+        -webkit-transform: rotate(-45deg)
 
 @keyframes show-text
   0%
@@ -99,4 +143,13 @@ export default {
   100%
     transform: translateX(0px)
     opacity: 1
+@keyframes scrollDown-upAndDown
+  0%
+    transform: translate(0, -60px)
+    opacity: 0
+  50%
+    opacity: 1
+  100%
+    transform: translate(0, -40px)
+    opacity: 0
 </style>
