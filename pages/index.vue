@@ -13,6 +13,7 @@
       "
       v-html="intro_content"
     ></h2>
+    <CoverText />
     <ImgText
       :img="intro_1_img"
       :title="intro_1_title"
