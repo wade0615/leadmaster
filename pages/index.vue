@@ -2,7 +2,7 @@
   <main id="home">
     <Carousel
       :images="carousel_images" :text="carousel_text"
-      class="mb-20 md:mb-24" style="height: calc(100vh - 80px)"
+      class="mb-24 md:mb-28" style="height: calc(100vh - 80px)"
     />
     <h2
       class="
