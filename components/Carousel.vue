@@ -107,7 +107,7 @@ export default {
       animation-duration: 0.7s
       animation-fill-mode: forwards
     h2
-      animation-delay: 2s
+      animation-delay: 1s
       position: relative
       &::after
         content: ''
@@ -120,7 +120,7 @@ export default {
         z-index: 1
         background-color: $leadmaster-red
     p
-      animation-delay: 3s
+      animation-delay: 2s
     > a
       position: relative
       display: inline-block
