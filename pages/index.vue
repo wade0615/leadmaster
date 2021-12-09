@@ -2,7 +2,7 @@
   <main id="home">
     <Carousel
       :images="carousel_images" :text="carousel_text"
-      class="mb-24 md:mb-28" style="height: calc(100vh - 80px)"
+      class="mb-24 md:mb-32" style="height: calc(100vh - 80px)"
     />
     <h2
       class="
@@ -18,7 +18,7 @@
       :right="intro.right"
       :coverImg="intro.img" 
       :text="intro.text"
-      class="mb-20 md:mb-24"
+      class="mb-10 md:mb-24"
     />
     <Featuretag :features="projects" class="mb-32 md:mb-52" />
     <BigThreePhotoFrame

@@ -82,6 +82,7 @@ export default {
   &::after
     top: 100%
     height: 15%
+    max-height: 6rem
     background: linear-gradient(180deg, rgba(255, 219, 219, 1) 10%, rgba(255, 255, 255, .5))
   .v-window__prev
     display: none
