@@ -1,13 +1,18 @@
 <template>
   <section
-    :style="{backgroundImage: 'url(' + taiwan + ')'}"
+    :style="{backgroundImage: 'url(' + coverImg + ')'}"
     class="cover-text"
   >
-  <div class="text">
-    <article class="p-20 max-w-screen-xl mx-auto">
+  <div class="text flex items-center justify-center">
+    <article class="p-8 sm:p-20 md:pt-28 max-w-screen-xl mx-auto">
       <p
         v-html="text"
-        class="sm:w-1/2 text-lg"
+        class="
+          md:w-1/2 text-lg md:text-xl
+          p-4 rounded
+          bg-gray-50 bg-opacity-80
+        "
+        :class="{'ml-auto': right}"
       ></p>
     </article>
   </div>
@@ -15,17 +20,12 @@
 </template>
 
 <script>
-import taiwan from "@/assets/image/images/taiwan.jpg";
-
 export default {
   name: "CoverText",
-  props: [],
+  props: ["right", "coverImg", "text"],
   watch: {},
   data() {
-    return {
-      taiwan: taiwan,
-      text: "公司創立於1994年，至今已運營25年頭，我們走過亞洲、美洲，完成了400多個項目， 主要項目落在世界級的餐廳、酒店、賭場、主題公園、渡假區域、科技廠員工餐廳和會 議中心。立麥餐飲設備有限公司 專注於酒店設計和整體概念發想，並協助客戶規劃相關內容，進而發展出完善的餐飲空間。<br><br>2012年起，我們將自己重新定位為 酒店顧問 ，以反映我們對整個餐飲過程的擴展，從規劃後台設施轉型為餐飲概念的設計提供者。我們徹底改變並期待為餐飲業帶來了新的視角，打破了廚師和顧客之間的隔閡。"
-    };
+    return {};
   },
   computed: {},
   methods: {},
@@ -37,7 +37,9 @@ export default {
 <style lang="sass" scoped>
 .cover-text
   position: relative
-  background: no-repeat center
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center center
   min-height: 80vh
   &::after
     content: ''

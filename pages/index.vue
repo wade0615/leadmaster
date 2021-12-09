@@ -13,18 +13,12 @@
       "
       v-html="intro_content"
     ></h2>
-    <CoverText />
-    <ImgText
-      :img="intro_1_img"
-      :title="intro_1_title"
-      :description="intro_1_description"
-      class="max-w-screen-xl mx-auto p-10 sm:p-20"
-    />
-    <TextImg
-      :img="intro_2_img"
-      :title="intro_2_title"
-      :description="intro_2_description"
-      class="max-w-screen-xl mx-auto p-10 sm:p-20 mb-20"
+    <CoverText 
+      v-for="(intro, index) in introData" :key="'introData' + index"
+      :right="intro.right"
+      :coverImg="intro.img" 
+      :text="intro.text"
+      class="mb-20 md:mb-24"
     />
     <Featuretag :features="projects" class="mb-32 md:mb-52" />
     <BigThreePhotoFrame
@@ -70,12 +64,7 @@ export default {
         subtitle: "最專業的酒店廚房規劃顧問",
       },
       intro_content: "我們從事關於大型飯店餐廳廚房設備工程的工程規劃設計及施工<br>專司廚房工程顧問性質，負責規劃-設計-施工廚房內部動線與機器操作",
-      intro_1_img: introData.intro_1_img,
-      intro_1_title: introData.intro_1_title,
-      intro_1_description: introData.intro_1_description,
-      intro_2_img: introData.intro_2_img,
-      intro_2_title: introData.intro_2_title,
-      intro_2_description: introData.intro_2_description,
+      introData: introData,
       projectsData: projectsData,
       projects: [],
       agentsData: agentsData,
