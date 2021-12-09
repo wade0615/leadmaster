@@ -1,4 +1,3 @@
-import bossImg from "@/assets/image/boss.jpeg";
 import teamImg from "@/assets/image/team.jpeg";
 import observeImg from "@/assets/image/observe.jpg";
 import designImg from "@/assets/image/interior_design.jpg";
@@ -7,10 +6,15 @@ import notJustKitchenImg from "@/assets/image/notJustKitchen.jpg";
 import ethosImg from "@/assets/image/ethos.jpeg";
 
 export default {
-  generalManager: {
-    img: bossImg,
-    title: "吳介仁 Bryan WU",
-    description: "立麥餐飲設備有限公司 總經理，在業界擁有超過 20 年的規劃、設計、施工經驗，教育並帶領公司團隊不斷挑戰不同的大型飯店專案，持續為成為業界首屈一指的飯店餐飲設計顧問而積極推動公司成長。"
+  intro_1: {
+    img: "https://govdesignhub.com/wp-content/uploads/2019/07/shutterstock_1145372444.jpg",
+    title: "積極用心",
+    description: "立麥餐飲設備有限公司積極整合餐飲設備工程設計與翻修工程的服務，公司成員皆具4-18年設計及施工的經驗，足以滿足不同類型不同需求的客戶。完整的先前作業，AUTOCAD 套圖設計施工，勝於事後的修補，將誤差降到最低，我們期許新團隊的組合，新力量的衍生，不斷推陳出新，以最精良的服務品質回報客戶。",
+  },
+  intro_2: {
+    img: "https://www.dongxin88888.com/web/user/dongxin88888/userfile/images_thumbs/knowledge/kind_introduce/used-catering-equipment/35.810x570.cutting.jpg",
+    title: "多元代理",
+    description: "2006年，立麥餐飲設備有限公司與捷克最大的多功能蒸烤箱製造廠 RETIGO 簽訂合約，成為台灣總代理。同時立麥轉投資不銹鋼工廠與風管工程公司，加強公司組織，減低公司成本，隨後簽訂代理 SOUTHBEND 西餐爐系列、BLODJETT 對流烤箱系列、PITCO 高效率油炸機，在本地設備與進口設備的組合上，取得成本上的絕對優勢。",
   },
   team: {
     img: teamImg,

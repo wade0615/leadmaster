@@ -78,10 +78,11 @@ export default {
   &::before
     top: 0
     height: 100%
-    background: linear-gradient(0deg, rgba(255, 219, 219, 1) 20%, rgba(255, 255, 255, .5))
+    background: linear-gradient(10deg, rgba(255, 219, 219, 1) 20%, rgba(255, 255, 255, .5))
   &::after
     top: 100%
     height: 15%
+    max-height: 6rem
     background: linear-gradient(180deg, rgba(255, 219, 219, 1) 10%, rgba(255, 255, 255, .5))
   .v-window__prev
     display: none
@@ -107,7 +108,7 @@ export default {
       animation-duration: 0.7s
       animation-fill-mode: forwards
     h2
-      animation-delay: 2s
+      animation-delay: 1s
       position: relative
       &::after
         content: ''
@@ -120,7 +121,7 @@ export default {
         z-index: 1
         background-color: $leadmaster-red
     p
-      animation-delay: 3s
+      animation-delay: 2s
     > a
       position: relative
       display: inline-block
