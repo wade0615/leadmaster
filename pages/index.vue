@@ -1,5 +1,6 @@
 <template>
   <main id="home">
+    <h1 class="hidden">立麥餐飲設備有限公司 LEADMASTER KITCHEN</h1>
     <Carousel
       :images="carousel_images" :text="carousel_text"
       class="mb-24 md:mb-32" style="height: calc(100vh - 80px)"
