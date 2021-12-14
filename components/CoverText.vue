@@ -8,7 +8,7 @@
       <p
         v-html="text"
         class="
-          md:w-1/2 text-lg md:text-xl
+          md:w-1/2 text-sm md:text-xl tracking-wider
           p-4 rounded
           bg-gray-50 bg-opacity-80
         "
