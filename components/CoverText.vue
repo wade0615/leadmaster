@@ -35,9 +35,11 @@ export default {
       window.addEventListener("scroll", ()=>{
         const windowScroll = window.innerHeight;
         const textDOM = this.$refs.textContent;
-        const textOffestTop = this.$refs.textContent.getBoundingClientRect().top;
-        if (windowScroll * 0.8 >= textOffestTop) {
-          textDOM.classList.add("active-animate");
+        if (textDOM) {
+          const textOffestTop = this.$refs.textContent.getBoundingClientRect().top;
+          if (windowScroll * 0.8 >= textOffestTop) {
+            textDOM.classList.add("active-animate");
+          };
         };
       });
     }
