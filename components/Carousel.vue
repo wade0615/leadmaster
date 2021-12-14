@@ -146,11 +146,11 @@ export default {
     opacity: 1
 @keyframes scrollDown-upAndDown
   0%
-    transform: translate(0, -60px)
+    transform: translate(0, -120px)
     opacity: 0
   50%
     opacity: 1
   100%
-    transform: translate(0, -40px)
+    transform: translate(0, -100px)
     opacity: 0
 </style>
