@@ -1,33 +1,17 @@
 <template>
   <section class="carousel">
-    <v-carousel
-      cycle
-      height="100%"
-      hide-delimiter-background
-      hide-delimiters
-    >
-      <v-carousel-item
-        v-for="(image, i) in images"
-        :key="i"
-        :src="image"
-      >
+    <v-carousel cycle height="100%" hide-delimiter-background hide-delimiters>
+      <v-carousel-item v-for="(image, i) in images" :key="i" :src="image">
       </v-carousel-item>
     </v-carousel>
     <div class="cover-text text-center">
-      <div class="
-        h-full
-        max-w-screen-xl mx-auto
-        p-10 sm:p-20 pt-24 sm:pt-36
-        flex items-center justify-center
-      ">
+      <div
+        class="h-full max-w-screen-xl mx-auto p-10 sm:p-20 pt-24 sm:pt-36 flex items-center justify-center"
+      >
         <div class="tracking-wider font-bold">
-          <h2 class="
-            break-words sm:break-normal
-            text-4xl sm:text-5xl
-            mb-8
-          ">
+          <h2 class="break-words sm:break-normal text-4xl sm:text-5xl mb-8">
             {{ text.title }}
-            <br>
+            <br />
             {{ text.title2 }}
           </h2>
           <p class="text-lg">
@@ -43,27 +27,27 @@
 
 <script>
 export default {
-  name: "Carousel",
-  props: ["images", "text"],
+  name: 'Carousel',
+  props: ['images', 'text'],
   data() {
-    return {};
+    return {}
   },
   methods: {
     scrollToButton() {
-      document.querySelector(".cover-text a").addEventListener("click", (e)=>{
-        e.preventDefault();
+      document.querySelector('.cover-text a').addEventListener('click', (e) => {
+        e.preventDefault()
         window.scrollTo({
-          top: document.querySelector("#scroll-down").offsetTop,
+          top: document.querySelector('#scroll-down').offsetTop,
           left: 0,
           behavior: 'smooth',
-        });
-      });
-    }
+        })
+      })
+    },
   },
   mounted() {
-    this.scrollToButton();
+    this.scrollToButton()
   },
-};
+}
 </script>
 
 <style lang="sass" scoped>
