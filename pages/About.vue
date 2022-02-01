@@ -58,19 +58,20 @@
 </template>
 
 <script>
-import aboutData from "@/assets/mockdata/about";
+import aboutData from '@/assets/mockdata/about'
 
 export default {
-  name: "About",
+  name: 'About',
   head: {
-    title: "關於我們｜立麥餐飲設備有限公司"
+    title: '關於我們｜立麥餐飲設備有限公司',
   },
   props: [],
   watch: {},
   data() {
     return {
-      banner_title: "About Us",
-      banner_description: "我們專注於台灣尖端的餐飲規劃設計顧問角色，在台灣的五星級飯店默默耕耘推動著廚房設備運轉的力量",
+      banner_title: 'About Us',
+      banner_description:
+        '我們專注於台灣尖端的餐飲規劃設計顧問角色，在台灣的五星級飯店默默耕耘推動著廚房設備運轉的力量',
       intro_1_img: aboutData.intro_1.img,
       intro_1_title: aboutData.intro_1.title,
       intro_1_description: aboutData.intro_1.description,
@@ -80,19 +81,19 @@ export default {
       team_img: aboutData.team.img,
       team_title: aboutData.team.title,
       team_description: aboutData.team.description,
-      sloganTitle: "How we work",
+      sloganTitle: 'How we work',
       slogans: [
         {
-          icon: "mdi-eye",
-          text: "精準分析",
+          icon: 'mdi-eye',
+          text: '精準分析',
         },
         {
-          icon: "mdi-lead-pencil",
-          text: "事前規劃",
+          icon: 'mdi-lead-pencil',
+          text: '事前規劃',
         },
         {
-          icon: "mdi-wrench",
-          text: "快速安裝",
+          icon: 'mdi-wrench',
+          text: '快速安裝',
         },
       ],
       observe_img: aboutData.observe.img,
@@ -110,13 +111,13 @@ export default {
       ethos_img: aboutData.ethos.img,
       ethos_title: aboutData.ethos.title,
       ethos_description: aboutData.ethos.description,
-    };
+    }
   },
   computed: {},
   methods: {},
   mounted() {},
   beforeMount() {},
-};
+}
 </script>
 
 <style lang="sass" scoped>

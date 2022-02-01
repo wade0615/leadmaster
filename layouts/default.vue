@@ -3,6 +3,7 @@
     <Nav v-show="hidden" />
     <Nuxt />
     <Footer v-show="hidden" />
+    <div id="fb-root"></div>
   </div>
 </template>
 
@@ -12,31 +13,29 @@ export default {
   watch: {
     $route() {
       if (process.client) {
-        this.hideNav();
-      };
+        this.hideNav()
+      }
     },
   },
-  data () {
+  data() {
     return {
       hidden: null,
     }
   },
   methods: {
     isLogin() {
-      return window.location.pathname != '/login';
+      return window.location.pathname != '/login'
     },
     hideNav() {
-      this.isLogin() ? this.hidden = true : this.hidden = false;
+      this.isLogin() ? (this.hidden = true) : (this.hidden = false)
     },
   },
-  computed: {
+  computed: {},
+  mounted() {
+    this.hideNav()
   },
-  mounted(){
-    this.hideNav();
-  },
-  beforeMount(){},
-  updated(){
-  },
+  beforeMount() {},
+  updated() {},
 }
 </script>
 

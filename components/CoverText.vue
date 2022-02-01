@@ -1,54 +1,59 @@
 <template>
   <section
-    :style="{backgroundImage: 'url(' + coverImg + ')'}"
+    :style="{ backgroundImage: 'url(' + coverImg + ')' }"
     class="cover-text"
   >
-  <div class="text flex items-center justify-center">
-    <article class="p-8 sm:p-20 md:pt-28 max-w-screen-xl mx-auto">
-      <p
-        ref="textContent"
-        v-html="text"
-        class="
-          md:w-1/2 text-sm md:text-xl tracking-wider
-          p-4 rounded
-          bg-gray-50 bg-opacity-80
-          opacity-0
-        "
-        :class="{'ml-auto': right}"
-      ></p>
-    </article>
-  </div>
+    <div class="text flex items-center justify-center">
+      <article class="p-8 sm:p-20 md:pt-28 max-w-screen-xl mx-auto">
+        <p
+          ref="textContent"
+          v-html="text"
+          class="
+            md:w-1/2
+            text-sm
+            md:text-xl
+            tracking-wider
+            p-4
+            rounded
+            bg-gray-50 bg-opacity-80
+            opacity-0
+          "
+          :class="{ 'ml-auto': right }"
+        ></p>
+      </article>
+    </div>
   </section>
 </template>
 
 <script>
 export default {
-  name: "CoverText",
-  props: ["right", "coverImg", "text"],
+  name: 'CoverText',
+  props: ['right', 'coverImg', 'text'],
   watch: {},
   data() {
-    return {};
+    return {}
   },
   computed: {},
   methods: {
     showText() {
-      window.addEventListener("scroll", ()=>{
-        const windowScroll = window.innerHeight;
-        const textDOM = this.$refs.textContent;
+      window.addEventListener('scroll', () => {
+        const windowScroll = window.innerHeight
+        const textDOM = this.$refs.textContent
         if (textDOM) {
-          const textOffestTop = this.$refs.textContent.getBoundingClientRect().top;
+          const textOffestTop =
+            this.$refs.textContent.getBoundingClientRect().top
           if (windowScroll * 0.8 >= textOffestTop) {
-            textDOM.classList.add("active-animate");
-          };
-        };
-      });
-    }
+            textDOM.classList.add('active-animate')
+          }
+        }
+      })
+    },
   },
   mounted() {
-    this.showText();
+    this.showText()
   },
   beforeMount() {},
-};
+}
 </script>
 
 <style lang="sass" scoped>
