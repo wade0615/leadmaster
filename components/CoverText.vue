@@ -17,6 +17,7 @@
             rounded
             bg-gray-50 bg-opacity-80
             opacity-0
+            shadow-lg
           "
           :class="{ 'ml-auto': right }"
         ></p>
