@@ -36,6 +36,12 @@ export default function Nav() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:block">
             <Link
+              href="/3d"
+              className="inline-block p-2 md:px-8 hover:text-gray-200 transition-colors bg-white/10 rounded px-3 py-1"
+            >
+              3D 展示
+            </Link>
+            <Link
               href="/about"
               className="inline-block p-2 md:px-8 hover:text-gray-200 transition-colors"
             >
@@ -111,6 +117,13 @@ export default function Nav() {
                 onClick={closeMenu}
               >
                 Home
+              </Link>
+              <Link
+                href="/3d"
+                className="block mb-2 p-2 hover:text-gray-200 transition-colors bg-white/10 rounded px-3 py-1"
+                onClick={closeMenu}
+              >
+                3D 展示
               </Link>
               <Link
                 href="/about"

@@ -6,9 +6,6 @@ const nextConfig = {
     unoptimized: true,
     domains: ["res.cloudinary.com"],
   },
-  experimental: {
-    appDir: true,
-  },
   async rewrites() {
     return [
       {

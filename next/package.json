@@ -10,19 +10,25 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@react-three/drei": "^9.92.0",
+    "@react-three/fiber": "^8.15.0",
+    "cloudinary": "^1.41.0",
+    "framer-motion": "^10.16.0",
+    "lucide-react": "^0.292.0",
     "next": "^14.0.0",
+    "next-cloudinary": "^5.12.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "cloudinary": "^1.41.0",
-    "next-cloudinary": "^5.12.0",
-    "framer-motion": "^10.16.0",
     "swiper": "^11.0.0",
-    "lucide-react": "^0.292.0"
+    "three": "^0.160.0",
+    "three-mesh-bvh": "^0.8.3",
+    "zustand": "^4.4.0"
   },
   "devDependencies": {
     "@types/node": "^20.8.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
+    "@types/three": "^0.160.0",
     "autoprefixer": "^10.4.0",
     "eslint": "^8.52.0",
     "eslint-config-next": "^14.0.0",
