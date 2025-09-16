@@ -1,248 +1,130 @@
-"use client";
-
-import { useRef } from "react";
+import { useRef, forwardRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import * as THREE from "three";
+import { Mesh } from "three";
 
-// 旋轉的立方體
-export function RotatingBox({ 
-  position, 
-  color = "#DA1B0A",
-  size = [1, 1, 1] as [number, number, number]
-}: { 
+interface RotatingBoxProps {
   position: [number, number, number];
-  color?: string;
-  size?: [number, number, number];
-}) {
-  const meshRef = useRef<THREE.Mesh>(null);
+  color: string;
+  size: [number, number, number];
+}
+
+interface RotatingSphereProps {
+  position: [number, number, number];
+  color: string;
+  radius: number;
+}
+
+interface TorusProps {
+  position: [number, number, number];
+  material: any;
+}
+
+interface ConeProps {
+  position: [number, number, number];
+  material: any;
+}
+
+interface TorusKnotProps {
+  position: [number, number, number];
+  material: any;
+}
+
+export function RotatingBox({ position, color, size }: RotatingBoxProps) {
+  const meshRef = useRef<Mesh>(null);
 
   useFrame((state, delta) => {
     if (meshRef.current) {
-      meshRef.current.rotation.x += delta;
-      meshRef.current.rotation.y += delta * 0.5;
+      meshRef.current.rotation.x += delta * 0.1;
+      meshRef.current.rotation.y += delta * 0.12;
     }
   });
 
   return (
     <mesh ref={meshRef} position={position}>
       <boxGeometry args={size} />
-      <meshStandardMaterial color={color} />
+      <meshToonMaterial color={color} />
     </mesh>
   );
 }
 
-// 旋轉的球體
-export function RotatingSphere({ 
-  position, 
-  color = "#4F4035",
-  radius = 0.5
-}: { 
-  position: [number, number, number];
-  color?: string;
-  radius?: number;
-}) {
-  const meshRef = useRef<THREE.Mesh>(null);
+export function RotatingSphere({
+  position,
+  color,
+  radius,
+}: RotatingSphereProps) {
+  const meshRef = useRef<Mesh>(null);
 
   useFrame((state, delta) => {
     if (meshRef.current) {
-      meshRef.current.rotation.x += delta * 0.5;
-      meshRef.current.rotation.y += delta;
+      meshRef.current.rotation.x += delta * 0.1;
+      meshRef.current.rotation.y += delta * 0.12;
     }
   });
 
   return (
     <mesh ref={meshRef} position={position}>
       <sphereGeometry args={[radius, 32, 32]} />
-      <meshStandardMaterial color={color} />
+      <meshToonMaterial color={color} />
     </mesh>
   );
 }
 
-// 旋轉的八面體
-export function RotatingOctahedron({
-  position,
-  color = "#8B4513",
-  radius = 0.5
-}: {
-  position: [number, number, number];
-  color?: string;
-  radius?: number;
-}) {
-  const meshRef = useRef<THREE.Mesh>(null);
+export const Torus = forwardRef<Mesh, TorusProps>(
+  ({ position, material }, ref) => {
+    useFrame((state, delta) => {
+      if (ref && typeof ref === "object" && ref.current) {
+        ref.current.rotation.x += delta * 0.1;
+        ref.current.rotation.y += delta * 0.12;
+      }
+    });
 
-  useFrame((state, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x += delta * 0.3;
-      meshRef.current.rotation.y += delta * 0.7;
-      meshRef.current.rotation.z += delta * 0.2;
-    }
-  });
+    return (
+      <mesh ref={ref} position={position}>
+        <torusGeometry args={[1, 0.4, 16, 60]} />
+        <primitive object={material} />
+      </mesh>
+    );
+  }
+);
 
-  return (
-    <mesh ref={meshRef} position={position}>
-      <octahedronGeometry args={[radius]} />
-      <meshStandardMaterial color={color} />
-    </mesh>
-  );
-}
+Torus.displayName = "Torus";
 
-// 旋轉的圓柱體
-export function RotatingCylinder({
-  position,
-  color = "#228B22",
-  radius = 0.5,
-  height = 1
-}: {
-  position: [number, number, number];
-  color?: string;
-  radius?: number;
-  height?: number;
-}) {
-  const meshRef = useRef<THREE.Mesh>(null);
+export const Cone = forwardRef<Mesh, ConeProps>(
+  ({ position, material }, ref) => {
+    useFrame((state, delta) => {
+      if (ref && typeof ref === "object" && ref.current) {
+        ref.current.rotation.x += delta * 0.1;
+        ref.current.rotation.y += delta * 0.12;
+      }
+    });
 
-  useFrame((state, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.y += delta;
-    }
-  });
+    return (
+      <mesh ref={ref} position={position}>
+        <coneGeometry args={[1, 2, 32]} />
+        <primitive object={material} />
+      </mesh>
+    );
+  }
+);
 
-  return (
-    <mesh ref={meshRef} position={position}>
-      <cylinderGeometry args={[radius, radius, height, 16]} />
-      <meshStandardMaterial color={color} />
-    </mesh>
-  );
-}
+Cone.displayName = "Cone";
 
-// 旋轉的圓錐體
-export function RotatingCone({ 
-  position, 
-  color = "#FF6347",
-  radius = 0.5,
-  height = 1
-}: { 
-  position: [number, number, number];
-  color?: string;
-  radius?: number;
-  height?: number;
-}) {
-  const meshRef = useRef<THREE.Mesh>(null);
+export const TorusKnot = forwardRef<Mesh, TorusKnotProps>(
+  ({ position, material }, ref) => {
+    useFrame((state, delta) => {
+      if (ref && typeof ref === "object" && ref.current) {
+        ref.current.rotation.x += delta * 0.1;
+        ref.current.rotation.y += delta * 0.12;
+      }
+    });
 
-  useFrame((state, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.y += delta * 0.8;
-    }
-  });
+    return (
+      <mesh ref={ref} position={position}>
+        <torusKnotGeometry args={[0.8, 0.35, 100, 16]} />
+        <primitive object={material} />
+      </mesh>
+    );
+  }
+);
 
-  return (
-    <mesh ref={meshRef} position={position}>
-      <coneGeometry args={[radius, height, 16]} />
-      <meshStandardMaterial color={color} />
-    </mesh>
-  );
-}
-
-// 旋轉的圓環
-export function RotatingTorus({ 
-  position, 
-  color = "#DA1B0A",
-  radius = 1,
-  tube = 0.3
-}: { 
-  position: [number, number, number];
-  color?: string;
-  radius?: number;
-  tube?: number;
-}) {
-  const meshRef = useRef<THREE.Mesh>(null);
-
-  useFrame((state, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x += delta * 0.2;
-      meshRef.current.rotation.y += delta * 0.3;
-    }
-  });
-
-  return (
-    <mesh ref={meshRef} position={position}>
-      <torusGeometry args={[radius, tube, 16, 32]} />
-      <meshStandardMaterial color={color} />
-    </mesh>
-  );
-}
-
-// 膠囊體
-export function RotatingCapsule({ 
-  position, 
-  color = "#9B59B6",
-  radius = 0.5,
-  length = 1
-}: { 
-  position: [number, number, number];
-  color?: string;
-  radius?: number;
-  length?: number;
-}) {
-  const meshRef = useRef<THREE.Mesh>(null);
-
-  useFrame((state, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x += delta * 0.4;
-      meshRef.current.rotation.z += delta * 0.6;
-    }
-  });
-
-  return (
-    <mesh ref={meshRef} position={position}>
-      <capsuleGeometry args={[radius, length]} />
-      <meshStandardMaterial color={color} />
-    </mesh>
-  );
-}
-
-// 管狀體
-export function RotatingTube({ 
-  position, 
-  color = "#E67E22",
-  radius = 0.5,
-  length = 2
-}: { 
-  position: [number, number, number];
-  color?: string;
-  radius?: number;
-  length?: number;
-}) {
-  const meshRef = useRef<THREE.Mesh>(null);
-
-  useFrame((state, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.y += delta * 0.5;
-      meshRef.current.rotation.z += delta * 0.3;
-    }
-  });
-
-  // 創建一個簡單的管狀路徑
-  const curve = new THREE.EllipseCurve(
-    0, 0,
-    radius, radius,
-    0, 2 * Math.PI,
-    false,
-    0
-  );
-
-  const points = curve.getPoints(50);
-  const geometry = new THREE.TubeGeometry(
-    new THREE.CatmullRomCurve3(points.map(p => new THREE.Vector3(p.x, 0, p.y))),
-    100,
-    0.1,
-    8,
-    false
-  );
-
-  return (
-    <mesh ref={meshRef} position={position}>
-      <primitive object={geometry} />
-      <meshStandardMaterial color={color} />
-    </mesh>
-  );
-}
+TorusKnot.displayName = "TorusKnot";

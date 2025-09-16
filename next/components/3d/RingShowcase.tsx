@@ -5,12 +5,12 @@ import { useFrame, useThree, Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { useRingStore } from "@/store/ringStore";
 import {
-  RotatingBox,
-  RotatingSphere,
-  RotatingOctahedron,
-  RotatingCylinder,
-  RotatingCone,
-} from "./3DObjects";
+  HomePanel,
+  AboutPanel,
+  AgentPanel,
+  ProjectsPanel,
+  RecruitmentPanel,
+} from "./panels";
 import * as THREE from "three";
 
 // 簡化的場景組件
@@ -24,86 +24,17 @@ function SimpleScene() {
 
     switch (panelSlug) {
       case "home":
-        return (
-          <>
-            <RotatingBox
-              position={[0, 1, 0]}
-              color="#DA1B0A"
-              size={[1.5, 1.5, 1.5]}
-            />
-            <RotatingSphere
-              position={[2, 0.5, 0]}
-              color="#4F4035"
-              radius={0.8}
-            />
-          </>
-        );
+        return <HomePanel />;
       case "about":
-        return (
-          <>
-            <RotatingOctahedron
-              position={[0, 1, 0]}
-              color="#8B4513"
-              radius={0.8}
-            />
-            <RotatingCylinder
-              position={[2, 0, 0]}
-              color="#228B22"
-              radius={0.6}
-              height={1.5}
-            />
-          </>
-        );
+        return <AboutPanel />;
       case "agent":
-        return (
-          <>
-            <RotatingCone
-              position={[0, 1, 0]}
-              color="#FF6347"
-              radius={0.8}
-              height={1.5}
-            />
-            <RotatingBox
-              position={[2, 0, 0]}
-              color="#E67E22"
-              size={[1, 1, 1]}
-            />
-          </>
-        );
+        return <AgentPanel />;
       case "projects":
-        return (
-          <>
-            <RotatingSphere position={[0, 1, 0]} color="#3498DB" radius={0.8} />
-            <RotatingOctahedron
-              position={[2, 0, 0]}
-              color="#E74C3C"
-              radius={0.6}
-            />
-          </>
-        );
+        return <ProjectsPanel />;
       case "recruitment":
-        return (
-          <>
-            <RotatingBox
-              position={[0, 1, 0]}
-              color="#34495E"
-              size={[1.2, 1.2, 1.2]}
-            />
-            <RotatingCone
-              position={[2, 0, 0]}
-              color="#E67E22"
-              radius={0.7}
-              height={1.3}
-            />
-          </>
-        );
+        return <RecruitmentPanel />;
       default:
-        return (
-          <>
-            <RotatingBox position={[0, 1, 0]} color="#DA1B0A" />
-            <RotatingSphere position={[2, 0, 0]} color="#4F4035" />
-          </>
-        );
+        return <HomePanel />;
     }
   };
 
@@ -128,14 +59,14 @@ function SimpleScene() {
       </mesh>
 
       {/* 軌道控制器 */}
-      <OrbitControls
+      {/* <OrbitControls
         ref={controlsRef}
-        enableZoom={true}
-        enablePan={true}
+        enableZoom={false}
+        enablePan={false}
         minPolarAngle={Math.PI / 4}
         maxPolarAngle={(Math.PI * 3) / 4}
         autoRotate={false}
-      />
+      /> */}
     </>
   );
 }
@@ -174,7 +105,7 @@ export default function RingShowcase() {
   }, [panels]);
 
   return (
-    <div className="w-full h-screen relative bg-gray-100">
+    <div className="w-full min-h-screen relative bg-gray-100">
       {/* 導航按鈕 */}
       <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10">
         <div className="flex space-x-2 bg-white/90 rounded-lg p-2 shadow-lg">
@@ -238,17 +169,23 @@ export default function RingShowcase() {
       </button>
 
       {/* 3D 場景 */}
-      <Canvas
-        camera={{
-          position: [0, 3, 8], // Y 軸從 2 調整為 3，往上移動 1 單位
-          fov: 60,
-          near: 0.1,
-          far: 1000,
-        }}
-        shadows
-      >
-        <SimpleScene />
-      </Canvas>
+      <section className="fixed top-0 left-0 w-full h-full outline-none">
+        <Canvas
+          camera={{
+            position: [0, 3, 8], // Y 軸從 2 調整為 3，往上移動 1 單位
+            fov: 60,
+            near: 0.1,
+            far: 100,
+          }}
+          shadows
+        >
+          <SimpleScene />
+        </Canvas>
+      </section>
+
+      <div className="w-full h-screen">123</div>
+      <div className="w-full h-screen">123</div>
+      <div className="w-full h-screen">123</div>
 
       {/* 當前面板資訊 */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10">
