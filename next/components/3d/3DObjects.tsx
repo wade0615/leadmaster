@@ -62,6 +62,14 @@ interface RotatingCapsuleProps {
   length: number;
 }
 
+interface RotatingPenProps {
+  position: [number, number, number];
+  color?: string;
+  penBodyColor?: string;
+  penTipColor?: string;
+  penCapColor?: string;
+}
+
 export function RotatingBox({ position, color, size }: RotatingBoxProps) {
   const meshRef = useRef<Mesh>(null);
 
@@ -268,5 +276,72 @@ export function RotatingCapsule({
       <capsuleGeometry args={[radius, length, 4, 8]} />
       <meshToonMaterial color={color} />
     </mesh>
+  );
+}
+
+export function RotatingPen({
+  position,
+  color = "#ff6b6b",
+  penBodyColor = "#4ecdc4",
+  penTipColor = "#2c3e50",
+  penCapColor = "#e74c3c",
+}: RotatingPenProps) {
+  const penGroupRef = useRef<THREE.Group>(null);
+
+  useFrame((state, delta) => {
+    if (penGroupRef.current) {
+      // 讓筆圍繞 Y 軸旋轉
+      penGroupRef.current.rotation.y += delta * 0.5;
+      penGroupRef.current.rotation.x += delta * 0.1;
+      // 添加微妙的浮動效果
+      penGroupRef.current.position.y =
+        position[1] + Math.sin(state.clock.elapsedTime) * 0.1;
+    }
+  });
+
+  return (
+    <group ref={penGroupRef} position={position}>
+      {/* 筆身 - 使用圓柱體 */}
+      <mesh position={[0, 0, 0]}>
+        <cylinderGeometry args={[0.08, 0.08, 2, 16]} />
+        <meshToonMaterial color={penBodyColor} />
+      </mesh>
+
+      {/* 筆尖 - 使用圓錐體 */}
+      <mesh position={[0, -1.15, 0]} rotation={[Math.PI, 0, 0]}>
+        <coneGeometry args={[0.09, 0.3, 11]} />
+        <meshToonMaterial color={penTipColor} />
+      </mesh>
+
+      {/* 筆帽 - 使用圓柱體，稍微大一點 */}
+      <mesh position={[0, 1.2, 0]}>
+        <cylinderGeometry args={[0.09, 0.09, 0.4, 16]} />
+        <meshToonMaterial color={penCapColor} />
+      </mesh>
+
+      {/* 筆帽頂部 - 使用半球體 */}
+      <mesh position={[0, 1.45, 0]}>
+        <sphereGeometry args={[0.09, 16, 8, 0, Math.PI * 2, 0, Math.PI / 2]} />
+        <meshToonMaterial color={penCapColor} />
+      </mesh>
+
+      {/* 筆身裝飾環 */}
+      <mesh position={[0, 0.3, 0]}>
+        <torusGeometry args={[0.1, 0.02, 8, 16]} />
+        <meshToonMaterial color={color} />
+      </mesh>
+
+      {/* 筆身裝飾環 2 */}
+      <mesh position={[0, -0.3, 0]}>
+        <torusGeometry args={[0.1, 0.02, 8, 16]} />
+        <meshToonMaterial color={color} />
+      </mesh>
+
+      {/* 筆夾 - 使用小盒子 */}
+      <mesh position={[0.12, 1.1, 0]} rotation={[0, 0, Math.PI / 2]}>
+        <boxGeometry args={[0.15, 0.02, 0.05]} />
+        <meshToonMaterial color={penCapColor} />
+      </mesh>
+    </group>
   );
 }

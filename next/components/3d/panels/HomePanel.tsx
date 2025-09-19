@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState, useMemo } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { MeshToonMaterial, TextureLoader, NearestFilter } from "three";
-import { Torus, Cone, TorusKnot } from "../3DObjects";
+import { Torus, Cone, TorusKnot, RotatingPen } from "../3DObjects";
 import { ParticleSystem } from "../ParticleSystem";
 import * as THREE from "three";
 import gsap from "gsap";
@@ -95,10 +95,16 @@ export default function HomePanel() {
   return (
     <group ref={cameraGroupRef}>
       {/* 三個主要 3D 物件 */}
-      <Torus
+      {/* <Torus
         position={[5, -objectsDistance * 0, 0]}
         material={material.current}
         ref={mesh1Ref}
+      /> */}
+      <RotatingPen
+        position={[5, -objectsDistance * 0, 0]}
+        penBodyColor="#4ecdc4"
+        penTipColor="#2c3e50"
+        penCapColor="#e74c3c"
       />
       <Cone
         position={[-5, -objectsDistance * 1, 0]}
