@@ -2,14 +2,14 @@ import Image from "next/image";
 
 interface CoverTextProps {
   right?: boolean;
-  coverImg: any;
+  // coverImg: any;
   text: string;
   className?: string;
 }
 
 export default function CoverText({
   right = false,
-  coverImg,
+  // coverImg,
   text,
   className = "",
 }: CoverTextProps) {
@@ -22,14 +22,16 @@ export default function CoverText({
       >
         {/* Image */}
         <div className="w-full lg:w-1/2">
-          <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
-            <Image
-              src={coverImg}
-              alt="Cover image"
-              fill
-              className="object-cover"
-            />
-          </div>
+          {/* <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+            {coverImg && (
+              <Image
+                src={coverImg}
+                alt="Cover image"
+                fill
+                className="object-cover"
+              />
+            )}
+          </div> */}
         </div>
 
         {/* Text Content */}

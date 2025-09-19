@@ -96,17 +96,17 @@ export default function HomePanel() {
     <group ref={cameraGroupRef}>
       {/* 三個主要 3D 物件 */}
       <Torus
-        position={[2, -objectsDistance * 0, 0]}
+        position={[5, -objectsDistance * 0, 0]}
         material={material.current}
         ref={mesh1Ref}
       />
       <Cone
-        position={[-2, -objectsDistance * 1, 0]}
+        position={[-5, -objectsDistance * 1, 0]}
         material={material.current}
         ref={mesh2Ref}
       />
       <TorusKnot
-        position={[2, -objectsDistance * 2, 0]}
+        position={[5, -objectsDistance * 2, 0]}
         material={material.current}
         ref={mesh3Ref}
       />

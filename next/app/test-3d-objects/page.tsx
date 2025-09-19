@@ -59,7 +59,7 @@ function TestScene() {
       </mesh>
 
       {/* 軌道控制器 */}
-      <OrbitControls enableZoom={true} enablePan={true} enableRotate={true} />
+      {/* <OrbitControls enableZoom={true} enablePan={true} enableRotate={true} /> */}
     </>
   );
 }

@@ -11,9 +11,16 @@ import {
   ProjectsPanel,
   RecruitmentPanel,
 } from "./panels";
+import {
+  HomeArticle,
+  // AboutArticle,
+  // AgentArticle,
+  // ProjectsArticle,
+  // RecruitmentArticle
+} from "./articles";
 import * as THREE from "three";
 
-// 簡化的場景組件
+// 場景組件
 function SimpleScene() {
   const { panels, currentPanel } = useRingStore();
   const controlsRef = useRef<any>(null);
@@ -71,6 +78,38 @@ function SimpleScene() {
   );
 }
 
+function ArticleSection() {
+  const { panels, currentPanel } = useRingStore();
+
+  // 根據當前面板返回對應的 3D 物件
+  const getCurrentArticle = () => {
+    const panelSlug = panels[currentPanel]?.slug;
+
+    switch (panelSlug) {
+      case "home":
+        return <HomeArticle />;
+      case "about":
+        return <div className="w-full h-screen">Fake</div>;
+      case "agent":
+        return <div className="w-full h-screen">Fake</div>;
+      case "projects":
+        return <div className="w-full h-screen">Fake</div>;
+      case "recruitment":
+        return <div className="w-full h-screen">Fake</div>;
+      default:
+        return (
+          <>
+            <div className="w-full h-screen">123</div>
+            <div className="w-full h-screen">123</div>
+            <div className="w-full h-screen">123</div>
+          </>
+        );
+    }
+  };
+
+  return <>{getCurrentArticle()}</>;
+}
+
 // 3d 主組件
 export default function RingShowcase() {
   const { goToNext, goToPrevious, panels, currentPanel } = useRingStore();
@@ -105,9 +144,9 @@ export default function RingShowcase() {
   }, [panels]);
 
   return (
-    <div className="w-full min-h-screen relative bg-gray-100">
+    <div className="w-full min-h-screen relative bg-gray-500">
       {/* 導航按鈕 */}
-      <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10">
+      <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-10">
         <div className="flex space-x-2 bg-white/90 rounded-lg p-2 shadow-lg">
           {panels.map((panel, index) => (
             <button
@@ -130,7 +169,7 @@ export default function RingShowcase() {
       {/* 左右切換按鈕 */}
       <button
         onClick={goToPrevious}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 rounded-full p-3 shadow-lg hover:bg-white transition-colors"
+        className="fixed left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 rounded-full p-3 shadow-lg hover:bg-white transition-colors"
         aria-label="上一個面板"
       >
         <svg
@@ -150,7 +189,7 @@ export default function RingShowcase() {
 
       <button
         onClick={goToNext}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 rounded-full p-3 shadow-lg hover:bg-white transition-colors"
+        className="fixed right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 rounded-full p-3 shadow-lg hover:bg-white transition-colors"
         aria-label="下一個面板"
       >
         <svg
@@ -172,7 +211,7 @@ export default function RingShowcase() {
       <section className="fixed top-0 left-0 w-full h-full outline-none">
         <Canvas
           camera={{
-            position: [0, 3, 8], // Y 軸從 2 調整為 3，往上移動 1 單位
+            position: [0, 0, 10], // Y 軸從 2 調整為 3，往上移動 1 單位
             fov: 60,
             near: 0.1,
             far: 100,
@@ -183,12 +222,10 @@ export default function RingShowcase() {
         </Canvas>
       </section>
 
-      <div className="w-full h-screen">123</div>
-      <div className="w-full h-screen">123</div>
-      <div className="w-full h-screen">123</div>
+      <ArticleSection />
 
       {/* 當前面板資訊 */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10">
+      <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-10">
         <div className="bg-white/90 rounded-lg p-4 shadow-lg max-w-md text-center">
           <h3 className="text-xl font-bold text-gray-800 mb-2">
             {panels[currentPanel]?.content.title}

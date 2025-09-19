@@ -56,7 +56,7 @@ export default function HomePage() {
           <CoverText
             key={`introData-${index}`}
             right={intro.right}
-            coverImg={intro.img}
+            // coverImg={intro.img}
             text={intro.text}
             className="mb-10 md:mb-24"
           />
