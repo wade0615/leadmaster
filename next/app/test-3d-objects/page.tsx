@@ -10,7 +10,7 @@ import {
   RotatingCone,
   RotatingTorus,
   RotatingCapsule,
-  RotatingChefHatCalculator,
+  RotatingChefHatSpatula,
 } from "@/components/3d/3DObjects";
 import * as THREE from "three";
 
@@ -59,13 +59,7 @@ function TestScene() {
         length={1.2}
       /> */}
 
-      <RotatingChefHatCalculator
-        position={[0, 0, 0]}
-        chefHatColor="#ffffff"
-        calculatorColor="#2c3e50"
-        screenColor="#34495e"
-        buttonColor="#95a5a6"
-      />
+      <RotatingChefHatSpatula position={[0, 0, 0]} />
 
       {/* 地面 */}
       <mesh position={[0, -2, 0]} rotation={[-Math.PI / 2, 0, 0]}>

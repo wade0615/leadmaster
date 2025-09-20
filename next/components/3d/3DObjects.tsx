@@ -1,6 +1,6 @@
 import { useRef, forwardRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
-import { Mesh } from "three";
+import { Mesh, DoubleSide } from "three";
 import { GUI } from "lil-gui";
 
 interface RotatingBoxProps {
@@ -71,12 +71,10 @@ interface RotatingPenProps {
   penCapColor?: string;
 }
 
-interface RotatingChefHatCalculatorProps {
+interface RotatingChefHatSpatulaProps {
   position: [number, number, number];
   chefHatColor?: string;
-  calculatorColor?: string;
-  screenColor?: string;
-  buttonColor?: string;
+  spatulaColor?: string;
   orbitRadius?: number;
   rotationSpeed?: number;
   orbitSpeed?: number;
@@ -358,19 +356,16 @@ export function RotatingPen({
   );
 }
 
-export function RotatingChefHatCalculator({
+export function RotatingChefHatSpatula({
   position,
   chefHatColor = "#ffffff",
-  calculatorColor = "#2c3e50",
-  screenColor = "#34495e",
-  buttonColor = "#95a5a6",
-  orbitRadius = 3,
-  rotationSpeed = 1,
+  spatulaColor = "#ffffff",
   orbitSpeed = 0.5,
-}: RotatingChefHatCalculatorProps) {
+  rotationSpeed = 1,
+}: RotatingChefHatSpatulaProps) {
   const orbitGroupRef = useRef<THREE.Group>(null);
   const chefHatRef = useRef<THREE.Group>(null);
-  const calculatorRef = useRef<THREE.Group>(null);
+  const spatulaRef = useRef<THREE.Group>(null);
 
   // const defaultParams = {
   //   chefHatWrinkles: 20,
@@ -383,19 +378,19 @@ export function RotatingChefHatCalculator({
 
   useFrame((state, delta) => {
     // 公轉 - 整個組合圍繞中心點旋轉
-    // if (orbitGroupRef.current) {
-    //   orbitGroupRef.current.rotation.y += delta * orbitSpeed;
-    // }
+    if (orbitGroupRef.current) {
+      orbitGroupRef.current.rotation.y += delta * orbitSpeed;
+    }
     // 廚師帽自轉
     if (chefHatRef.current) {
-      chefHatRef.current.rotation.y += delta * rotationSpeed;
-      chefHatRef.current.rotation.x += delta * rotationSpeed * 0.1;
+      chefHatRef.current.rotation.y += delta * rotationSpeed * 1.5;
+      // chefHatRef.current.rotation.x += delta * rotationSpeed * 0.1;
     }
-    // 計算機自轉
-    // if (calculatorRef.current) {
-    //   calculatorRef.current.rotation.y += delta * rotationSpeed * 0.8;
-    //   calculatorRef.current.rotation.z += delta * rotationSpeed * 0.2;
-    // }
+    // 鍋鏟自轉
+    if (spatulaRef.current) {
+      // spatulaRef.current.rotation.x += delta * rotationSpeed * 0.8;
+      spatulaRef.current.rotation.z += delta * rotationSpeed * 0.8;
+    }
   });
 
   // 監聽參數變化
@@ -409,7 +404,11 @@ export function RotatingChefHatCalculator({
   // });
 
   return (
-    <group ref={orbitGroupRef} position={position}>
+    <group
+      ref={orbitGroupRef}
+      position={position}
+      rotation={[0, 0, Math.PI / 20]}
+    >
       {/* 廚師帽組件 */}
       <group ref={chefHatRef} position={[1.5, 0, 0]} rotation={[Math.PI, 0, 0]}>
         {/* 廚師帽主體 - 使用圓柱體 */}
@@ -431,71 +430,40 @@ export function RotatingChefHatCalculator({
         </mesh>
       </group>
 
-      {/* 計算機組件 */}
-      <group ref={calculatorRef} position={[-1.5, 0, 0]}>
-        {/* 計算機主體 */}
-        <mesh position={[0, 0, 0]}>
-          <boxGeometry args={[1.2, 0.8, 0.2]} />
-          <meshToonMaterial color={calculatorColor} />
+      {/* 鍋鏟組件 */}
+      <group
+        ref={spatulaRef}
+        position={[-1.5, 0, 0]}
+        rotation={[(Math.PI * 2) / 5, 0, 0]}
+        scale={1.2}
+      >
+        {/* 鍋鏟主體 */}
+        <mesh position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+          <cylinderGeometry args={[0.08, 0.025, 2, 5]} />
+          <meshToonMaterial color={spatulaColor} />
         </mesh>
 
-        {/* 計算機螢幕 */}
-        <mesh position={[0, 0.2, 0.11]}>
-          <boxGeometry args={[1, 0.4, 0.02]} />
-          <meshToonMaterial color={screenColor} />
-        </mesh>
-
-        {/* 螢幕邊框 */}
-        <mesh position={[0, 0.2, 0.12]}>
-          <boxGeometry args={[1.05, 0.45, 0.01]} />
-          <meshToonMaterial color={calculatorColor} />
-        </mesh>
-
-        {/* 按鈕區域 */}
-        <mesh position={[0, -0.15, 0.11]}>
-          <boxGeometry args={[1, 0.3, 0.02]} />
-          <meshToonMaterial color={buttonColor} />
-        </mesh>
-
-        {/* 個別按鈕 */}
-        {Array.from({ length: 12 }, (_, i) => {
-          const row = Math.floor(i / 4);
-          const col = i % 4;
-          const x = (col - 1.5) * 0.2;
-          const y = -0.15 + (row - 1) * 0.1;
-
-          return (
-            <mesh key={i} position={[x, y, 0.12]}>
-              <cylinderGeometry args={[0.08, 0.08, 0.01, 8]} />
-              <meshToonMaterial color={buttonColor} />
-            </mesh>
-          );
-        })}
-
-        {/* 計算機側邊按鈕 */}
-        <mesh position={[0.55, 0, 0.11]}>
-          <cylinderGeometry args={[0.05, 0.05, 0.02, 8]} />
-          <meshToonMaterial color={buttonColor} />
-        </mesh>
-
-        {/* 計算機底部支撐 */}
-        <mesh position={[0, -0.5, 0]}>
-          <boxGeometry args={[1.4, 0.1, 0.3]} />
-          <meshToonMaterial color={calculatorColor} />
+        {/* 鍋鏟面 */}
+        <mesh
+          position={[0, 0.74, 0.82]}
+          rotation={[(Math.PI * 5) / 15, -Math.PI / 13, 0]}
+        >
+          <cylinderGeometry args={[0.9, 0.7, 0.6, 3, 1, true, 0, 0.5]} />
+          <meshToonMaterial color={spatulaColor} side={DoubleSide} />
         </mesh>
       </group>
 
       {/* 連接線 - 可選的視覺連接 */}
-      <mesh position={[0, 0, 0]}>
+      {/* <mesh position={[0, 0, 0]}>
         <cylinderGeometry args={[0.02, 0.02, orbitRadius * 2, 8]} />
         <meshToonMaterial color="#7f8c8d" transparent opacity={0.3} />
-      </mesh>
+      </mesh> */}
 
       {/* 中心裝飾球 */}
-      <mesh position={[0, 0, 0]}>
+      {/* <mesh position={[0, 0, 0]}>
         <sphereGeometry args={[0.2, 16, 16]} />
         <meshToonMaterial color="#e74c3c" />
-      </mesh>
+      </mesh> */}
     </group>
   );
 }

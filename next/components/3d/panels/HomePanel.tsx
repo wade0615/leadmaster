@@ -1,11 +1,7 @@
 import { useRef, useEffect, useState, useMemo } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { MeshToonMaterial, TextureLoader, NearestFilter } from "three";
-import {
-  TorusKnot,
-  RotatingPen,
-  RotatingChefHatCalculator,
-} from "../3DObjects";
+import { TorusKnot, RotatingPen, RotatingChefHatSpatula } from "../3DObjects";
 import { ParticleSystem } from "../ParticleSystem";
 import * as THREE from "three";
 import gsap from "gsap";
@@ -115,14 +111,7 @@ export default function HomePanel() {
         penTipColor="#2c3e50"
         penCapColor="#e74c3c"
       />
-      <RotatingChefHatCalculator
-        position={[-5, -objectsDistance * 1, 0]}
-        chefHatColor="#ffffff"
-        calculatorColor="#2c3e50"
-        orbitRadius={3}
-        rotationSpeed={1}
-        orbitSpeed={0.5}
-      />
+      <RotatingChefHatSpatula position={[-5, -objectsDistance * 1, 0]} />
       <TorusKnot
         position={[5, -objectsDistance * 2, 0]}
         material={material.current}
