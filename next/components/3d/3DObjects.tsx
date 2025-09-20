@@ -1,6 +1,6 @@
 import { useRef, forwardRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
-import { Mesh, DoubleSide } from "three";
+import { Mesh, DoubleSide, Group } from "three";
 import { GUI } from "lil-gui";
 
 interface RotatingBoxProps {
@@ -296,7 +296,7 @@ export function RotatingPen({
   penTipColor = "#2c3e50",
   penCapColor = "#e74c3c",
 }: RotatingPenProps) {
-  const penGroupRef = useRef<THREE.Group>(null);
+  const penGroupRef = useRef<Group>(null);
 
   useFrame((state, delta) => {
     if (penGroupRef.current) {
@@ -363,9 +363,9 @@ export function RotatingChefHatSpatula({
   orbitSpeed = 0.5,
   rotationSpeed = 1,
 }: RotatingChefHatSpatulaProps) {
-  const orbitGroupRef = useRef<THREE.Group>(null);
-  const chefHatRef = useRef<THREE.Group>(null);
-  const spatulaRef = useRef<THREE.Group>(null);
+  const orbitGroupRef = useRef<Group>(null);
+  const chefHatRef = useRef<Group>(null);
+  const spatulaRef = useRef<Group>(null);
 
   // const defaultParams = {
   //   chefHatWrinkles: 20,
@@ -464,6 +464,35 @@ export function RotatingChefHatSpatula({
         <sphereGeometry args={[0.2, 16, 16]} />
         <meshToonMaterial color="#e74c3c" />
       </mesh> */}
+    </group>
+  );
+}
+
+export function RotatingSpanner({ spannerColor = "#ffffff" }) {
+  return (
+    <group>
+      {/* 扳手凹口 */}
+      <mesh position={[0.25, 0, 0]}>
+        <cylinderGeometry args={[0.7, 0.7, 0.2, 10, 1, false, 0, Math.PI]} />
+        <meshToonMaterial color={spannerColor} side={DoubleSide} />
+      </mesh>
+      <mesh position={[-0.25, 0, 0]}>
+        <cylinderGeometry
+          args={[0.7, 0.7, 0.2, 10, 1, false, Math.PI, Math.PI]}
+        />
+        <meshToonMaterial color={spannerColor} side={DoubleSide} />
+      </mesh>
+      {/* 扳手柄 */}
+      <mesh position={[0, 0, 1.5]}>
+        <boxGeometry args={[0.5, 0.2, 3]} />
+        <meshToonMaterial color={spannerColor} side={DoubleSide} />
+      </mesh>
+
+      {/* 定位中心線 */}
+      <mesh position={[0, 0, 0]}>
+        <cylinderGeometry args={[0.02, 0.02, 1, 8]} />
+        <meshToonMaterial color="#7f8c8d" transparent opacity={0.3} />
+      </mesh>
     </group>
   );
 }
