@@ -1,7 +1,11 @@
 import { useRef, useEffect, useState, useMemo } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { MeshToonMaterial, TextureLoader, NearestFilter } from "three";
-import { Torus, Cone, TorusKnot, RotatingPen } from "../3DObjects";
+import {
+  TorusKnot,
+  RotatingPen,
+  RotatingChefHatCalculator,
+} from "../3DObjects";
 import { ParticleSystem } from "../ParticleSystem";
 import * as THREE from "three";
 import gsap from "gsap";
@@ -100,16 +104,24 @@ export default function HomePanel() {
         material={material.current}
         ref={mesh1Ref}
       /> */}
+      {/* <Cone
+        position={[-5, -objectsDistance * 1, 0]}
+        material={material.current}
+        ref={mesh2Ref}
+      /> */}
       <RotatingPen
         position={[5, -objectsDistance * 0, 0]}
         penBodyColor="#4ecdc4"
         penTipColor="#2c3e50"
         penCapColor="#e74c3c"
       />
-      <Cone
+      <RotatingChefHatCalculator
         position={[-5, -objectsDistance * 1, 0]}
-        material={material.current}
-        ref={mesh2Ref}
+        chefHatColor="#ffffff"
+        calculatorColor="#2c3e50"
+        orbitRadius={3}
+        rotationSpeed={1}
+        orbitSpeed={0.5}
       />
       <TorusKnot
         position={[5, -objectsDistance * 2, 0]}
@@ -126,7 +138,7 @@ export default function HomePanel() {
       />
 
       {/* 光源 */}
-      <directionalLight position={[1, 1, 0]} intensity={3} color="#ffffff" />
+      <directionalLight position={[1, -1, 0]} intensity={2} color="#ffffff" />
     </group>
   );
 }

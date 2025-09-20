@@ -48,10 +48,10 @@ function SimpleScene() {
   return (
     <>
       {/* 環境光 */}
-      <ambientLight intensity={0.6} />
+      <ambientLight intensity={0.2} />
 
       {/* 定向光 */}
-      <directionalLight position={[10, 10, 5]} intensity={1} />
+      <directionalLight position={[10, 10, 5]} intensity={0.5} />
 
       {/* 點光源 */}
       <pointLight position={[0, 5, 0]} intensity={0.5} color="#DA1B0A" />
