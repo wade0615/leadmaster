@@ -41,7 +41,8 @@ export default defineNuxtConfig({
     },
   },
 
-  css: ['@/assets/css/hamburgers/hamburgers.scss', '@/assets/css/global.sass'],
+  // hamburgers.css 是由 hamburgers.scss 套件預編譯（僅含 collapse 型），避免舊語法的 Sass 棄用警告
+  css: ['@/assets/css/hamburgers.css', '@/assets/css/global.sass'],
 
   vite: {
     css: {
