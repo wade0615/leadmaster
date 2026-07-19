@@ -9,11 +9,12 @@
 | ---- | ------------------------------- | ------------------ | ---------- |
 | P0 | 外部圖片本地化＋失效連結更新 | 版面破圖、死連結 | 半天～1 天 |
 | P0 | 本地圖片壓縮＋導入 @nuxt/image | 載入速度（LCP） | 半天 |
+| P0 | SEO 關鍵修正（空 title、lang、og:image、各頁 description） | 搜尋結果與社群分享 | 1～2 小時 |
 | P1 | 載入 Noto Serif TC 字型 | 中文觀感 | 1 小時 |
-| P1 | SEO / og 標籤修正 | 社群分享預覽 | 1～2 小時 |
 | P2 | 版型小 bug 修正 | 局部間距／對齊 | 1 小時 |
 | P2 | 無障礙與互動細節 | a11y、行動端 UX | 2～3 小時 |
 | P2 | FB 客服替換、PWA icon 補齊或移除 | 死功能清理 | 1～2 小時 |
+| P2 | SEO 結構強化（h1、canonical、JSON-LD、robots.txt） | 搜尋排名長期基礎 | 2～3 小時 |
 
 ---
 
@@ -82,6 +83,37 @@ mockdata 中 38 個外部網址實測 **17 個已失效**（2026-07-20）。
 4. 來源大圖用 sharp／squoosh 壓到合理尺寸（頁面顯示寬度的 2x 即可）
 5. `og_img.png` 壓縮並轉換為 1200×630 標準尺寸
 
+## P0-3 SEO 關鍵修正
+
+> 基於 2026-07-20 的 SEO 稽核（檢查 `nuxt generate` 產物、dev server、正式站 leadmaster.tw）。
+>
+> 現況好的基本盤：全站 SSG 預渲染（內容爬蟲可直接讀）、內頁 title 各自獨立、
+> sitemap.xml 自動產生、google-site-verification 已保留。以下為需修正項目。
+
+### 1. 首頁 `<title>` 在靜態產出中是空的（遷移引入的 bug，必修）
+
+dev server 正常，但 `nuxt generate` 產出的 `index.html` title 是空的——首頁是權重最高的頁面。
+原因：首頁沒有自己的 `useHead` title，只靠全域 `app.head`，預渲染時未正確落地。
+
+修法：`pages/index.vue` 補明確的 `useHead({ title: '立麥餐飲設備有限公司' })`。
+驗證：`npm run generate` 後檢查 `.output/public/index.html` 的 `<title>`。
+
+### 2. `<html>` 缺少 `lang` 屬性
+
+新站產出的 `<html>` 無 lang；**正式站現況更糟：`lang="en"` 配中文內容**，誤導搜尋引擎語言判定。
+
+修法：`nuxt.config.ts` 的 `app.head` 加 `htmlAttrs: { lang: 'zh-Hant-TW' }`。
+
+### 3. `og:image` 相對路徑
+
+FB/LINE 爬蟲需要絕對網址，現在 `/og_img.png` 分享出去大概率無預覽圖。
+改為 `https://leadmaster.tw/og_img.png`，並補 `og:image:width`/`height`（建議同時把圖轉 1200×630 標準尺寸，見 P0-2）。
+
+### 4. 五頁共用同一份 description
+
+內頁沒有各自的 description 與 og 標籤，搜尋結果中每頁摘要都相同，浪費內頁排名機會。
+各頁 `useHead` 補頁面專屬的 `description`、`og:title`、`og:description`。
+
 ## P1-1 載入 Noto Serif TC
 
 CSS 宣告了 `'Noto Serif TC'` 但**從未載入**（舊站起就是如此），中文一直由系統字型墊檔。
@@ -89,12 +121,6 @@ CSS 宣告了 `'Noto Serif TC'` 但**從未載入**（舊站起就是如此）�
 1. `nuxt.config.ts` 的 `googleFonts.families` 加入 `'Noto Serif TC': [400, 700]`
 2. 檢查 `global.sass`：Vollkorn 目前只套 `h1-h5,p,span`，`li`、`a` 沒吃到（footer 字型不一致）——調整選擇器涵蓋範圍或改在 `body` 統一設定
 3. 中文字型檔大，確認 google-fonts 模組的 subset／`font-display: swap` 設定
-
-## P1-2 SEO / og 標籤
-
-- `og:image` 目前是相對路徑 `/og_img.png`——FB/LINE 爬蟲需要**絕對網址**，現在分享出去很可能沒有預覽圖。改為 `https://leadmaster.tw/og_img.png`
-- 內頁只有 `title`，補上各頁的 `description` 與 `og:title`/`og:description`
-- 補 `canonical` 連結（配合 site.url 即可）
 
 ## P2-1 版型小 bug（自舊站繼承）
 
@@ -119,6 +145,14 @@ CSS 宣告了 `'Noto Serif TC'` 但**從未載入**（舊站起就是如此）�
 - footer 的 `goo.gl/maps` 短網址目前仍可用，但 Google 已逐步淘汰 goo.gl，建議換成 `maps.app.goo.gl` 或完整 Google Maps 網址
 - 聯絡信箱為個人 gmail（`bryanwu088@gmail.com`），若有公司網域信箱建議替換（順帶更新 mailto 與 footer）
 
+## P2-4 SEO 結構強化
+
+- **h1 結構**：首頁唯一的 h1 是 `class="hidden"`（`display:none` 隱藏文字，Google 不採計且屬高風險老 hack）；四個內頁完全沒有 h1（Banner 標題是 h2）。建議 Banner 的標題升為 h1，首頁改為可見的品牌標題或移除隱藏 h1
+- **canonical**：各頁補 `<link rel="canonical">`（配合 site.url 組絕對網址）
+- **結構化資料**：footer 已有完整公司資訊（地址、電話、營業項目），加一段 `LocalBusiness` JSON-LD，成本低、對在地搜尋（如「新店 廚房設備」）有實際幫助
+- **robots.txt**：目前不存在（正式站也 404）。加 `@nuxtjs/robots` 模組或手放 `public/robots.txt`，內含 `Sitemap: https://leadmaster.tw/sitemap.xml` 指向
+- **效能即 SEO**：P0-2 的圖片優化同時服務 Core Web Vitals（Google 排名訊號），兩者一起驗收
+
 ---
 
 ## 驗收標準
@@ -129,3 +163,6 @@ CSS 宣告了 `'Noto Serif TC'` 但**從未載入**（舊站起就是如此）�
 - [ ] 中文以 Noto Serif TC 渲染
 - [ ] FB/LINE 分享出現正確預覽圖（用各平台的 sharing debugger 驗證）
 - [ ] 鍵盤可完整操作導覽（Tab／Esc）
+- [ ] `nuxt generate` 產物中每頁 `<title>` 皆非空、description 各自獨立
+- [ ] `<html lang="zh-Hant-TW">`、canonical、robots.txt、LocalBusiness JSON-LD 皆到位
+- [ ] 每頁恰有一個可見的 h1
