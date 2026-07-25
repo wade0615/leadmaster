@@ -16,13 +16,20 @@
             <p class="text-base md:text-lg">
               {{ content.description }}
             </p>
-            <a
-              :href="content.link" target="_blank"
-              class="text-sm flex items-center justify-end"
-            >
-              了解更多
-              <AppIcon name="mdi-arrow-right" :size="16" />
-            </a>
+            <div class="text-sm flex items-center justify-end gap-6">
+              <button
+                v-if="content.photos && content.photos.length"
+                type="button" class="action-link flex items-center"
+                @click="emit('open-gallery', content)"
+              >
+                案場照片
+                <AppIcon name="mdi-arrow-right" :size="16" />
+              </button>
+              <a :href="content.link" target="_blank" class="action-link flex items-center">
+                查看官網
+                <AppIcon name="mdi-arrow-right" :size="16" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -32,6 +39,7 @@
 
 <script setup>
 defineProps(['content'])
+const emit = defineEmits(['open-gallery'])
 </script>
 
 <style lang="sass" scoped>
@@ -48,4 +56,8 @@ defineProps(['content'])
       top: 40%
       transform: translate(0, -50%)
       background-color: rgba(229, 231, 235, 0.9)
+  .action-link
+    color: $leadmaster-gold
+    &:hover
+      text-decoration: underline
 </style>

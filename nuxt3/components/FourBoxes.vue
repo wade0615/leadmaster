@@ -19,6 +19,18 @@
             {{ box.subtitle }}
           </p>
         </a>
+        <div class="flex items-center justify-end gap-4 mt-2 text-sm">
+          <button
+            v-if="box.photos && box.photos.length"
+            type="button" class="action-link"
+            @click="emit('open-gallery', box)"
+          >
+            案場照片
+          </button>
+          <a :href="box.link" target="_blank" class="action-link">
+            查看官網
+          </a>
+        </div>
       </div>
     </section>
   </div>
@@ -26,9 +38,14 @@
 
 <script setup>
 defineProps(['title', 'boxes'])
+const emit = defineEmits(['open-gallery'])
 </script>
 
 <style lang="sass" scoped>
 .four-boxes
   position: relative
+  .action-link
+    color: $leadmaster-gold
+    &:hover
+      text-decoration: underline
 </style>

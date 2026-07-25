@@ -1,66 +1,84 @@
+import marriottTaipeiImg from "@/assets/image/projects/marriott_taipei.webp";
+import leMeridienBanqiaoImg from "@/assets/image/projects/le_meridien_banqiao.webp";
+import indigoAlishanImg from "@/assets/image/projects/indigo_alishan.webp";
+import vocoChiayiImg from "@/assets/image/projects/voco_chiayi.webp";
+import fairfieldTaichungImg from "@/assets/image/projects/fairfield_taichung.webp";
+import hyattPlaceXinzhuangImg from "@/assets/image/projects/hyatt_place_xinzhuang.webp";
+import grandBanyanTainanImg from "@/assets/image/projects/grand_banyan_tainan.webp";
+import mumingTaichungImg from "@/assets/image/projects/muming_taichung.webp";
+
+// 前 4 筆為大圖 Jumbotron 區，其餘為 More Projects 四宮格區
 export default [
   {
     title: "台北萬豪酒店",
-    subtitle: "Marriott Taipei",
-    img: "https://media.vogue.com.tw/photos/608a9246385f0fb31ab0b4ca/master/w_1600,h_900,c_limit/14%20Garden%20Kitchen%E5%8D%88%E9%96%93%E9%99%90%E5%AE%9A%E5%8D%8A%E8%87%AA%E5%8A%A9%E9%A4%90_%E5%8F%B0%E5%8C%97%E8%90%AC%E8%B1%AA%E9%85%92%E5%BA%97.jpg",
-    img_alt: "Marriott Taipei 台北萬豪酒店",
+    gallery: "大1台北萬豪",
+    subtitle: "Taipei Marriott Hotel",
+    img: marriottTaipeiImg,
+    img_alt: "Taipei Marriott Hotel 台北萬豪酒店",
     link: "https://www.taipeimarriott.com.tw/",
-    description: "坐擁療癒身心的河濱景緻，台北萬豪在繁華市區中，帶您潛入靜謐怡人的都市花園。"
+    description: "全台首家萬豪品牌酒店，集飯店、會展與商場於一身的大直地標，26 間宴會廳與六大餐廳匯聚，在河濱綠意間款待國際賓客。"
   },
   {
-    title: "台北君悅酒店",
-    subtitle: "Grand Hyatt Taipei",
-    img: "https://tnimage.s3.hicloud.net.tw/photos/2019/10/02/1570020262-5d949ba6b7f8f.jpg",
-    img_alt: "Grand Hyatt Taipei 台北君悅酒店",
-    link: "https://www.hyatt.com/zh-HK/hotel/taiwan/grand-hyatt-taipei/taigh?src=prop_sm_taigh_grand_facebk_about&fbclid=IwAR2gatFqPOaVxgZeV7lkvfrBLLNs6-2IKeMcX10qjrhZNAae7yDPhWo6h00",
-    description: "台北君悅酒店為台灣第一家國際五星級豪華飯店，緊鄰台北101，信義區及市政府捷運站。"
+    title: "台北板橋馥華艾美酒店",
+    gallery: "大2板橋艾美",
+    subtitle: "Le Méridien Taipei Banqiao",
+    img: leMeridienBanqiaoImg,
+    img_alt: "Le Méridien Taipei Banqiao 台北板橋馥華艾美酒店",
+    link: "https://www.marriott.com/hotels/travel/tpemb-le-meridien-taipei-banqiao/",
+    description: "座落新板特區的全新地標，以歐式優雅結合在地藝術，236 間高樓景觀客房俯瞰大台北。"
   },
   {
-    title: "福容飯店",
-    subtitle: "FULLON HOTELS",
-    img: "https://www.fullon-hotels.com.tw/upload/restaurant_list_pic_s/fw_twL_restaurant_20D26_y4meqncxqb.jpg",
-    img_alt: "FULLON HOTELS 福容飯店",
-    link: "https://www.fullon-hotels.com.tw/tw/",
-    description: "福心笑容，台灣人情。以最誠摯的笑容，為您迎來最美好的旅程體驗。"
+    title: "阿里山英迪格酒店",
+    gallery: "大3阿里山英迪哥",
+    subtitle: "Hotel Indigo Alishan",
+    img: indigoAlishanImg,
+    img_alt: "Hotel Indigo Alishan 阿里山英迪格酒店",
+    link: "https://www.ihg.com/hotelindigo/hotels/tw/zh/chiayi-county/cyigo/hoteldetail",
+    description: "全台海拔最高的國際精品度假酒店，融入鄒族文化與茶園意象，坐擁阿里山雲海日出。"
   },
   {
-    title: "台北西華飯店",
-    subtitle: "The Sherwood Taipei",
-    img: "https://www.sherwood.com.tw/upload/f2e/banner950x1900/tos1.png",
-    img_alt: "The Sherwood Taipei 台北西華飯店",
-    link: "https://www.sherwood.com.tw/zh-tw",
-    description: "轉動鑰匙的那一刻、投入最舒適的懷抱，才是回到家的感覺。"
+    title: "嘉義福容voco酒店",
+    gallery: "大4嘉義voco",
+    subtitle: "voco Chiayi",
+    img: vocoChiayiImg,
+    img_alt: "voco Chiayi 嘉義福容voco酒店",
+    link: "https://www.ihg.com/voco/hotels/tw/zh/chiayi/cyiyi/hoteldetail",
+    description: "IHG 洲際集團 voco 品牌在台首發據點，369 間客房匯聚多元餐飲，是嘉義市的嶄新地標。"
   },
   {
     title: "台中萬楓酒店",
+    gallery: "小台中萬楓",
     subtitle: "Fairfield by Marriott Taichung",
-    img: "https://cache.marriott.com/marriottassets/marriott/RMQFI/rmqfi-dining-1254-hor-feat.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1180px:*",
-    img_alt: "Fairfield by Marriott Taichung 萬楓酒店",
+    img: fairfieldTaichungImg,
+    img_alt: "Fairfield by Marriott Taichung 台中萬楓酒店",
     link: "https://www.marriott.com/hotels/travel/rmqfi-fairfield-taichung/",
     description: "台中萬楓酒店位於繁華的台中市，向在全台灣地區旅遊的遊客提供貼心服務和周到設施。"
   },
   {
-    title: "國賓大飯店",
-    subtitle: "Ambassador Hotels",
-    img: "https://www.ambassador-hotels.com/images/files/taipei/dining/a-cut/4V6A1388.jpg",
-    img_alt: "Ambassador Hotels 國賓大飯店",
-    link: "https://www.ambassador-hotels.com/tc/taipei/",
-    description: "秉持以客為尊及持續創新的精神，成為首屈一指的五星級觀光大飯店。"
+    title: "新莊凱悅嘉軒酒店",
+    gallery: "小新莊嘉軒",
+    subtitle: "Hyatt Place New Taipei City Xinzhuang",
+    img: hyattPlaceXinzhuangImg,
+    img_alt: "Hyatt Place New Taipei City Xinzhuang 新莊凱悅嘉軒酒店",
+    link: "https://www.hyatt.com/hyatt-place/en-US/tpezn-hyatt-place-new-taipei-city-xinzhuang",
+    description: "凱悅嘉軒品牌在台首間酒店，278 間現代客房座落新莊副都心，智慧體驗與寵物友善兼具。"
   },
   {
-    title: "台北W酒店",
-    subtitle: "W Hotel",
-    img: "https://cache.marriott.com/marriottassets/marriott/TPEWH/tpewh-woobar-6921-hor-feat.jpg?interpolation=progressive-bilinear&downsize=2000px:*",
-    img_alt: "W Hotel 台北W酒店",
-    link: "https://www.marriott.com/hotels/travel/tpewh-w-taipei/?scid=5d6c9ba8-fdb3-45cd-90d4-fc3cbfe3681c&y_source=1_Mjc4MjA3My01NTktbG9jYXRpb24ud2Vic2l0ZQ%3D%3D&fbclid=IwAR3TancnMEzau_FIpeG-YuP0j9J3Xf72rQJ95dFY2g7P664CjMzScb0JvvQ",
-    description: "台北W 飯店兼具藝術與時尚元素，提供奢華住宿體驗，坐落在信義區中心地帶。"
+    title: "台南禧榕軒大飯店",
+    gallery: "小台南禧榕軒",
+    subtitle: "Grand Banyan Hotel",
+    img: grandBanyanTainanImg,
+    img_alt: "Grand Banyan Hotel 台南禧榕軒大飯店",
+    link: "https://www.grandbanyanhotel.com/",
+    description: "以百年老榕樹為意象的台南五星級飯店，頂樓空中花園泳池眺望古都，品味府城款待。"
   },
   {
-    title: "大板根森林溫泉酒店",
-    subtitle: "The Great Roots Forestry Spa Resort",
-    img: "https://www.thegreatroots.com/wp-content/uploads/2016/12/9c6881c2a0f0dbc2550cdf827c6d8bfd.jpg",
-    img_alt: "The Great Roots Forestry Spa Resort 大板根森林溫泉酒店",
-    link: "https://www.thegreatroots.com/",
-    description: "從許下承諾的那一刻起，我們就緊緊守護這片森林，伴隨著大板根的成長。"
+    title: "台中沐明鍋物",
+    gallery: "小台中沐明火鍋",
+    subtitle: "Mu Ming Hotpot",
+    img: mumingTaichungImg,
+    img_alt: "Mu Ming Hotpot 台中沐明鍋物",
+    link: "https://www.facebook.com/muminghotpot/",
+    description: "台中七期高空鍋物旗艦，於中信金融大樓 27、28 樓以百萬夜景佐頂級和牛與現撈海鮮。"
   },
 ]
