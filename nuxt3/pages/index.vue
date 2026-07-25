@@ -51,10 +51,10 @@ import introData from '@/assets/mockdata/homeIntro'
 import projectsData from '@/assets/mockdata/projects'
 import agentsData from '@/assets/mockdata/agents'
 
-import carouselImg_1 from '@/assets/image/design2.jpeg'
-import carouselImg_2 from '@/assets/image/construction.jpeg'
-import carouselImg_3 from '@/assets/image/design.jpeg'
-import carouselImg_4 from '@/assets/image/construction2.jpeg'
+import carouselImg_1 from '@/assets/image/design2.webp'
+import carouselImg_2 from '@/assets/image/construction.webp'
+import carouselImg_3 from '@/assets/image/design.webp'
+import carouselImg_4 from '@/assets/image/construction2.webp'
 
 const carousel_images = [
   carouselImg_1,
