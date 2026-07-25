@@ -1,5 +1,5 @@
-import taiwan from '@/assets/image/taiwan.jpg'
-import kitchen from '@/assets/image/kitchen.jpg'
+import taiwan from '@/assets/image/taiwan.webp'
+import kitchen from '@/assets/image/kitchen.webp'
 
 export default [
   {

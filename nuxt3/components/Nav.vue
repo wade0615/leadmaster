@@ -3,7 +3,7 @@
     <div class="max-w-screen-xl mx-auto">
       <div class="py-1 px-6 flex justify-between items-center" style="height: 80px">
         <NuxtLink to="/" class="inline-block px-4 py-1.5">
-          <img src="@/assets/image/leadmaster_logo2.png" alt="Logo"
+          <img src="@/assets/image/leadmaster_logo2.webp" alt="Logo"
             class="p-px bg-white"
           />
         </NuxtLink>
@@ -29,7 +29,7 @@
     <!-- 取代 v-navigation-drawer + v-overlay -->
     <aside class="navigation-drawer px-14 py-16" :class="{ open: drawer }">
       <NuxtLink to="/" class="block mx-auto w-24 mb-8">
-        <img src="@/assets/image/leadmaster_logo.png" alt="Logo"
+        <img src="@/assets/image/leadmaster_logo.webp" alt="Logo"
           class="inline-block bg-white rounded"
         />
       </NuxtLink>

@@ -29,7 +29,7 @@ export default defineNuxtConfig({
         },
         { property: 'og:locale', content: 'zh_TW' },
         { property: 'og:type', content: 'website' },
-        { property: 'og:image', content: 'https://leadmaster.tw/og_img.png' },
+        { property: 'og:image', content: 'https://leadmaster.tw/og_img.jpg' },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
         {

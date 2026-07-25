@@ -3,7 +3,7 @@
     <div class="max-w-screen-xl mx-auto">
       <section class="mb-3 flex flex-col md:flex-row md:justify-between md:items-start">
         <img
-          src="@/assets/image/leadmaster_logo.png" alt="Logo"
+          src="@/assets/image/leadmaster_logo.webp" alt="Logo"
           class="w-28 mx-auto mb-8 md:m-0 pr-px bg-white rounded"
         />
         <div class="">

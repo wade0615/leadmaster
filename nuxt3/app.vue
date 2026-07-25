@@ -28,7 +28,7 @@ useHead({
         name: '立麥餐飲設備有限公司',
         alternateName: 'LEADMASTER KITCHEN EQUIPMENT CO., LTD.',
         url: 'https://leadmaster.tw',
-        image: 'https://leadmaster.tw/og_img.png',
+        image: 'https://leadmaster.tw/og_img.jpg',
         telephone: '+886-2-2916-1022',
         email: 'bryanwu088@gmail.com',
         address: {
