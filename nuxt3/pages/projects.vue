@@ -1,6 +1,7 @@
 <template>
   <main id="projects">
     <Banner
+      :eyebrow="banner_eyebrow"
       :title="banner_title"
       :description="banner_description"
       class="max-w-screen-xl mx-auto px-10 py-20"
@@ -49,7 +50,8 @@ useSeoMeta({
     '台北萬豪、板橋馥華艾美、阿里山英迪格、嘉義福容voco 等國際五星級飯店廚房工程實績。',
 })
 
-const banner_title = 'Our Projects'
+const banner_eyebrow = 'Our Projects'
+const banner_title = '國際酒店餐飲設備顧問實績'
 const banner_description =
   '我們作為國際酒店餐飲設備顧問，專司整合餐飲空間於 HACCP 規範與各國際連鎖飯店標準之上，涵蓋 酒水吧檯、日本料理、西餐廚房、豪宅型精緻廚具、五星級飯店開放式廚房、大型宴會廳 的餐飲規劃 <br/><br/> 台北萬豪酒店、板橋馥華艾美酒店、阿里山英迪格酒店、嘉義福容voco酒店、台中萬楓酒店、新莊凱悅嘉軒酒店、台南禧榕軒大飯店......等國際五星級飯店，都是我們服務配合的客戶企業！'
 

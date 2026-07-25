@@ -1,6 +1,7 @@
 <template>
   <main id="about" class="">
     <Banner
+      :eyebrow="banner_eyebrow"
       :title="banner_title"
       :description="banner_description"
       class="max-w-screen-xl mx-auto px-10 py-20"
@@ -69,7 +70,8 @@ useSeoMeta({
     '廚房設計、HACCP 顧問輔導、酒吧與酒櫃設計、食品加工廠設計——在台灣的五星級飯店推動廚房設備運轉的力量。',
 })
 
-const banner_title = 'About Us'
+const banner_eyebrow = 'About Us'
+const banner_title = '廚房設計與 HACCP 顧問服務'
 const banner_description =
   '我們專注於廚房設計與 HACCP 顧問輔導的餐飲規劃設計顧問角色，在台灣的五星級飯店默默耕耘推動著廚房設備運轉的力量'
 const sloganTitle = 'How we work'

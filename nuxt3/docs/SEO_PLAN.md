@@ -89,6 +89,7 @@
 | 首頁空 title bug | `pages/index.vue` 補明確 `useSeoMeta` title，generate 產出驗證通過 |
 | html lang | `nuxt.config.ts` 加 `htmlAttrs: { lang: 'zh-Hant-TW' }` |
 | h1 結構 | `Banner.vue` 標題 h2→h1（內頁各得唯一 h1）；`Carousel.vue` 主標題 h2→h1（首頁）；移除首頁 `display:none` 隱藏 h1 |
+| h1 關鍵字（審查修正） | 原英文標題（About Us 等）降為 eyebrow 副標，h1 改為中文關鍵字標題與 title 對齊：/about「廚房設計與 HACCP 顧問服務」、/projects「國際酒店餐飲設備顧問實績」、/agent「國際廚房設備代理品牌」、/recruitment「職缺招募」——避免 Google 因 h1/title 落差改寫搜尋結果標題 |
 | 各頁獨立 meta | 五頁（後含 /projects 共六組）各自 `useSeoMeta`：title、description、og:title、og:description |
 | canonical | `app.vue` 依 route 動態產生絕對網址 canonical |
 | robots.txt | 新增 `public/robots.txt`，指向 `https://leadmaster.tw/sitemap.xml` |

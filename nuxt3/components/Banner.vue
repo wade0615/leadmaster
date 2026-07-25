@@ -1,17 +1,22 @@
 <template>
   <section id="banner" class="py-8 text-center">
-    <h1 class="pb-8 mb-10 text-6xl md:text-8xl">{{ title }}</h1>
+    <p v-if="eyebrow" class="eyebrow mb-4 text-2xl md:text-4xl tracking-widest">
+      {{ eyebrow }}
+    </p>
+    <h1 class="pb-8 mb-10 text-3xl md:text-5xl">{{ title }}</h1>
     <p class="max-w-screen-md mx-auto text-lg" v-html="description"></p>
   </section>
 </template>
 
 <script setup>
-defineProps(['title', 'description'])
+defineProps(['title', 'description', 'eyebrow'])
 </script>
 
 <style lang="sass" scoped>
 #banner
   position: relative
+  .eyebrow
+    color: #6B7280
   h1
     position: relative
     &::after

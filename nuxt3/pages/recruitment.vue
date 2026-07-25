@@ -1,6 +1,7 @@
 <template>
   <main id="recruitment" class="">
     <Banner
+      :eyebrow="banner_eyebrow"
       :title="banner_title"
       :description="banner_description"
       class="max-w-screen-xl mx-auto px-10 py-20 text-center"
@@ -45,7 +46,8 @@ useSeoMeta({
     '加入立麥餐飲設備團隊，一起服務國際五星級飯店的廚房設備工程。',
 })
 
-const banner_title = 'We Are Hiring'
+const banner_eyebrow = 'We Are Hiring'
+const banner_title = '職缺招募'
 const banner_description =
   '我們關注員工發展，團隊合作一直是我們的工作常態，期許讓員工與公司一起成長。'
 const recruitments = [

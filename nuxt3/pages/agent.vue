@@ -1,6 +1,7 @@
 <template>
   <main id="agent" class="">
     <Banner
+      :eyebrow="banner_eyebrow"
       :title="banner_title"
       :description="banner_description"
       class="max-w-screen-xl mx-auto px-10 py-20"
@@ -27,7 +28,8 @@ useSeoMeta({
     '代理 RATIONAL、HOBART、Manitowoc、Angelo Po 等國際廚房設備品牌。',
 })
 
-const banner_title = 'All Agents'
+const banner_eyebrow = 'All Agents'
+const banner_title = '國際廚房設備代理品牌'
 const banner_description =
   "我們代理 特殊大型炭烤爐具GRILLWORK'S, 德製 RATIONAL, M.K.N 蒸烤箱, HOBART 洗碗機, Manitowoc 製冰機, 義大利大廠 Angelo po 西式島型爐具, 桌上型 6pan, 10pan 蒸烤箱, 落地型 20pan, 40pan 蒸烤箱, 蒸氣鍋爐設備, Robot Coupe 食物調理機, Cleveland 大型蒸氣迴轉鍋, ANGELO PO Blast chiller 急速冷凍櫃及麵包房設備大廠，各式多功能蒸烤箱、西餐爐、對流烤箱等，在本地設備與進口設備的組合上，滿足不同類型不同需求的客戶"
 const agentsTitle = '認識我們代理的品牌'
