@@ -1,6 +1,6 @@
 <template>
   <section id="banner" class="py-8 text-center">
-    <h2 class="pb-8 mb-10 text-6xl md:text-8xl">{{ title }}</h2>
+    <h1 class="pb-8 mb-10 text-6xl md:text-8xl">{{ title }}</h1>
     <p class="max-w-screen-md mx-auto text-lg" v-html="description"></p>
   </section>
 </template>
@@ -12,7 +12,7 @@ defineProps(['title', 'description'])
 <style lang="sass" scoped>
 #banner
   position: relative
-  h2
+  h1
     position: relative
     &::after
       content: ""

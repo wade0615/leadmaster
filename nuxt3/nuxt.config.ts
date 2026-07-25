@@ -4,30 +4,34 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: '立麥餐飲設備有限公司',
+      htmlAttrs: { lang: 'zh-Hant-TW' },
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
           name: 'description',
           content:
-            '立麥餐飲設備有限公司從事關於大型飯店餐廳廚房設備工程的工程規劃設計及施工，專司廚房工程顧問性質，負責規劃-設計-施工廚房內部動線與機器操作',
+            '立麥餐飲設備有限公司——專業廚房顧問與餐飲顧問公司，提供國際酒店廚房設計、HACCP 顧問輔導、酒吧與酒櫃設計、食品加工廠設計規劃，從動線規劃、設備選型到施工維保一站式服務。',
         },
         { name: 'format-detection', content: 'telephone=no' },
         {
           property: 'og:title',
-          content: 'Leadmaster 立麥餐飲設備有限公司',
+          content: 'Leadmaster 立麥餐飲設備有限公司｜廚房顧問・餐飲顧問',
         },
         {
           property: 'og:description',
           content:
-            '立麥餐飲設備有限公司從事關於大型飯店餐廳廚房設備工程的工程規劃設計及施工，專司廚房工程顧問性質，負責規劃-設計-施工廚房內部動線與機器操作',
+            '專業廚房顧問與餐飲顧問公司，提供國際酒店廚房設計、HACCP 顧問輔導、酒吧與酒櫃設計、食品加工廠設計規劃。',
         },
         {
           property: 'og:site_name',
-          content: '餐飲設備規劃公司',
+          content: '立麥餐飲設備有限公司',
         },
         { property: 'og:locale', content: 'zh_TW' },
-        { property: 'og:image', content: '/og_img.png' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:image', content: 'https://leadmaster.tw/og_img.png' },
+        { property: 'og:image:width', content: '1200' },
+        { property: 'og:image:height', content: '630' },
         {
           name: 'google-site-verification',
           content: 'x1KDy2SSiRcOMjKFhI-ng2n7X_HosHVl8Wygn_ptFHg',

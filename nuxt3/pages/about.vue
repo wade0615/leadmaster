@@ -60,13 +60,18 @@
 <script setup>
 import aboutData from '@/assets/mockdata/about'
 
-useHead({
-  title: '關於我們｜立麥餐飲設備有限公司',
+useSeoMeta({
+  title: '關於我們與服務項目｜廚房設計・HACCP・酒吧顧問｜立麥餐飲設備',
+  description:
+    '立麥餐飲設備專注於廚房設計與 HACCP 顧問輔導，服務涵蓋酒吧顧問與酒櫃設計、中央廚房與食品加工廠設計，以精準分析、事前規劃、快速安裝，在台灣的五星級飯店推動廚房設備運轉的力量。',
+  ogTitle: '關於我們與服務項目｜廚房設計・HACCP・酒吧顧問｜立麥餐飲設備',
+  ogDescription:
+    '廚房設計、HACCP 顧問輔導、酒吧與酒櫃設計、食品加工廠設計——在台灣的五星級飯店推動廚房設備運轉的力量。',
 })
 
 const banner_title = 'About Us'
 const banner_description =
-  '我們專注於台灣尖端的餐飲規劃設計顧問角色，在台灣的五星級飯店默默耕耘推動著廚房設備運轉的力量'
+  '我們專注於廚房設計與 HACCP 顧問輔導的餐飲規劃設計顧問角色，在台灣的五星級飯店默默耕耘推動著廚房設備運轉的力量'
 const sloganTitle = 'How we work'
 const slogans = [
   {

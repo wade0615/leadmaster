@@ -36,8 +36,13 @@
 </template>
 
 <script setup>
-useHead({
+useSeoMeta({
   title: '職缺招募｜立麥餐飲設備有限公司',
+  description:
+    '加入立麥餐飲設備團隊——我們是專業的廚房顧問公司，服務國際五星級飯店的廚房設備工程，歡迎對餐飲設備規劃設計與維修保養有熱情的夥伴。',
+  ogTitle: '職缺招募｜立麥餐飲設備有限公司',
+  ogDescription:
+    '加入立麥餐飲設備團隊，一起服務國際五星級飯店的廚房設備工程。',
 })
 
 const banner_title = 'We Are Hiring'

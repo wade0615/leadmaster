@@ -1,6 +1,5 @@
 <template>
   <main id="home">
-    <h1 class="hidden">立麥餐飲設備有限公司 LEADMASTER KITCHEN</h1>
     <Carousel
       :images="carousel_images" :text="carousel_text"
       class="mb-24 md:mb-32" style="height: calc(100vh - 80px)"
@@ -39,6 +38,15 @@
 </template>
 
 <script setup>
+useSeoMeta({
+  title: '立麥餐飲設備｜廚房顧問・餐飲顧問・國際酒店廚房設備規劃',
+  description:
+    '立麥餐飲設備有限公司——專業廚房顧問與餐飲顧問公司，提供國際酒店廚房設計、HACCP 顧問輔導、酒吧與酒櫃設計、食品加工廠設計規劃，從動線規劃、設備選型到施工維保一站式服務。',
+  ogTitle: '立麥餐飲設備｜廚房顧問・餐飲顧問',
+  ogDescription:
+    '專業廚房顧問與餐飲顧問公司，提供國際酒店廚房設計、HACCP 顧問輔導、酒吧與酒櫃設計、食品加工廠設計規劃。',
+})
+
 import introData from '@/assets/mockdata/homeIntro'
 import projectsData from '@/assets/mockdata/projects'
 import agentsData from '@/assets/mockdata/agents'

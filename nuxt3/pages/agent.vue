@@ -18,8 +18,13 @@
 import agentsData from '@/assets/mockdata/agents'
 import allAgentsImg from '@/assets/image/agents.jpeg'
 
-useHead({
+useSeoMeta({
   title: '代理商｜立麥餐飲設備有限公司',
+  description:
+    '立麥餐飲設備代理 RATIONAL、MKN 蒸烤箱、HOBART 洗碗機、Manitowoc 製冰機、Angelo Po 西式爐具、Robot Coupe 食物調理機等國際廚房設備品牌，滿足各類型餐飲空間的設備需求。',
+  ogTitle: '代理商｜立麥餐飲設備有限公司',
+  ogDescription:
+    '代理 RATIONAL、HOBART、Manitowoc、Angelo Po 等國際廚房設備品牌。',
 })
 
 const banner_title = 'All Agents'

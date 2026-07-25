@@ -15,11 +15,11 @@
         class="h-full max-w-screen-xl mx-auto p-10 sm:p-20 pt-24 sm:pt-36 flex items-center justify-center"
       >
         <div class="tracking-wider font-bold">
-          <h2 class="break-words sm:break-normal text-4xl sm:text-5xl mb-8">
+          <h1 class="break-words sm:break-normal text-4xl sm:text-5xl mb-8">
             {{ text.title }}
             <br />
             {{ text.title2 }}
-          </h2>
+          </h1>
           <p class="text-lg">
             {{ text.subtitle }}
           </p>
@@ -98,12 +98,12 @@ onUnmounted(() => {
     height: 100%
     z-index: 2
     transition: all 1s
-    h2, p
+    h1, p
       opacity: 0
       animation-name: show-text
       animation-duration: 0.7s
       animation-fill-mode: forwards
-    h2
+    h1
       animation-delay: 1s
       position: relative
       &::after

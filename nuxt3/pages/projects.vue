@@ -15,6 +15,15 @@
         @open-gallery="openGallery"
       />
     </section>
+    <section class="max-w-screen-md mx-auto px-10 mb-24">
+      <div class="mb-6 text-center">
+        <h2 class="mb-3 text-3xl">國際酒店餐飲設備顧問</h2>
+        <span class="inline-block h-px w-14 bg-yellow-600"></span>
+      </div>
+      <p class="text-base md:text-lg leading-relaxed">
+        {{ consultant_intro }}
+      </p>
+    </section>
     <FourBoxes
       :title="moreProjectsTitle" :boxes="moreProjects"
       @open-gallery="openGallery"
@@ -31,13 +40,21 @@
 import projectsData from '@/assets/mockdata/projects'
 import { getGalleryImages } from '@/assets/mockdata/projectGalleries'
 
-useHead({
-  title: '我們的客戶｜立麥餐飲設備有限公司',
+useSeoMeta({
+  title: '國際酒店餐飲設備顧問實績｜立麥餐飲設備',
+  description:
+    '立麥餐飲設備作為國際酒店餐飲設備顧問，於 HACCP 規範與國際連鎖酒店標準下規劃廚房工程：台北萬豪、板橋馥華艾美、阿里山英迪格、嘉義福容voco 等五星級飯店實績。',
+  ogTitle: '國際酒店餐飲設備顧問實績｜立麥餐飲設備',
+  ogDescription:
+    '台北萬豪、板橋馥華艾美、阿里山英迪格、嘉義福容voco 等國際五星級飯店廚房工程實績。',
 })
 
 const banner_title = 'Our Projects'
 const banner_description =
-  '我們專司於整合整體餐飲空間在Haccp與各國際連鎖飯店的需求上，包含 酒水吧檯,日本料理,西餐廚房,豪宅型精緻廚具,五星級飯店開放式廚房,大型宴會廳 的餐飲規劃 <br/><br/> The Taipei Marriott Hotel, 君悅 HAYTT 飯店, 福容飯店, 國賓飯店, 西華飯店, W hotel ......等國際五星級飯店，都是我們服務配合的客戶企業！'
+  '我們作為國際酒店餐飲設備顧問，專司整合餐飲空間於 HACCP 規範與各國際連鎖飯店標準之上，涵蓋 酒水吧檯、日本料理、西餐廚房、豪宅型精緻廚具、五星級飯店開放式廚房、大型宴會廳 的餐飲規劃 <br/><br/> 台北萬豪酒店、板橋馥華艾美酒店、阿里山英迪格酒店、嘉義福容voco酒店、台中萬楓酒店、新莊凱悅嘉軒酒店、台南禧榕軒大飯店......等國際五星級飯店，都是我們服務配合的客戶企業！'
+
+const consultant_intro =
+  '我們長期擔任國際酒店餐飲設備顧問，熟悉萬豪、凱悅、IHG 等國際連鎖集團的廚房標準與驗收流程，從開放式廚房、宴會廳到全日餐廳皆有完整經驗。所有實績案場皆可透過「案場照片」檢視我們的施工成果。'
 
 const withPhotos = projectsData.map((project) => ({
   ...project,
