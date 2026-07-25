@@ -8,14 +8,19 @@
       <div class="px-2 mx-auto mb-10 max-w-screen-sm md:max-w-max w-full"
         v-for="(feature, index) in features" :key="'feature' + index"
       >
-        <a class="block" :href="feature.link" target="_blank">
+        <component
+          :is="feature.link ? 'a' : 'div'"
+          class="block"
+          :href="feature.link || undefined"
+          :target="feature.link ? '_blank' : undefined"
+        >
           <img
             :src="feature.img"
             :alt="feature.img_alt"
             class="w-full h-80 object-cover mb-4"
           />
           <h3 class="block text-lg">{{ feature.title }}</h3>
-        </a>
+        </component>
       </div>
     </section>
   </div>

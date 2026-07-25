@@ -1,62 +1,102 @@
+import mknImg from '@/assets/image/agents/mkn.webp'
+import haltonImg from '@/assets/image/agents/halton.webp'
+import hobartImg from '@/assets/image/agents/hobart.webp'
+import winterhalterImg from '@/assets/image/agents/winterhalter.webp'
+import williamsImg from '@/assets/image/agents/williams.webp'
+import kingswayImg from '@/assets/image/agents/kingsway.webp'
+import angelopoImg from '@/assets/image/agents/angelopo.webp'
+import rationalImg from '@/assets/image/agents/rational.webp'
+import dallacorteImg from '@/assets/image/agents/dallacorte.webp'
+import markphiliImg from '@/assets/image/agents/markphili.webp'
+import cambroImg from '@/assets/image/agents/cambro.webp'
+import hatcoImg from '@/assets/image/agents/hatco.webp'
+import hoshizakiImg from '@/assets/image/agents/hoshizaki.webp'
+import zumexImg from '@/assets/image/agents/zumex.webp'
+
+// 前 3 筆同時顯示於首頁 BigThreePhotoFrame
 export default [
   {
-    title: "GRILLWORK'S",
-    img: 'https://images.squarespace-cdn.com/content/v1/576ed7249f7456eedf843b98/1576561734625-EODPF46A17JXXADHZ3LP/232Bleecker-4.jpg?format=1500w',
-    img_alt: "GRILLWORK'S",
-    link: 'https://www.grillworksusa.com/',
+    title: 'MKN 蒸烤箱西餐爐具設備',
+    img: mknImg,
+    img_alt: 'MKN FlexiCombi 多功能蒸烤箱',
+    link: 'https://www.mkn.com/en/',
   },
   {
-    title: 'RATIONAL',
-    img: 'https://i.ytimg.com/vi/N5aOlOmhKMk/maxresdefault.jpg',
-    img_alt: 'RATIONAL',
-    link: 'https://www.rational-online.com/en_sg/home/',
+    title: 'HALTON 進口煙罩',
+    img: haltonImg,
+    img_alt: 'HALTON 商用廚房排油煙罩',
+    link: 'https://www.halton.com/foodservice/',
   },
   {
-    title: 'HOBART',
-    img: 'https://cdnimg.webstaurantstore.com/images/guides/945/hobart_trouble_shooting_header.jpg',
-    img_alt: 'HOBART',
-    link: 'https://www.hobart.ca/',
+    title: 'Hobart 洗碗機系列',
+    img: hobartImg,
+    img_alt: 'Hobart FT1000e 隧道式洗碗機',
+    link: 'https://www.hobartcorp.com/',
   },
   {
-    title: 'Manitowoc',
-    img: 'https://www.manitowocice.com/getattachment/bf4bba52-381e-44c4-a185-b600bd749ac1/image.jpg.aspx?sitename=ManitowocIce&maxsidesize=800&width=800&height=450',
-    img_alt: 'Manitowoc',
-    link: 'https://www.manitowocice.com/products',
+    title: 'Winterhalter 洗碗機系列',
+    img: winterhalterImg,
+    img_alt: 'Winterhalter 揭蓋式洗碗機',
+    link: 'https://www.winterhalter.com/',
   },
   {
-    title: 'Angelo po',
-    img: 'https://www.monolithe.it/images/slider_home/img1.jpg',
-    img_alt: 'Angelo po',
+    title: 'Williams 進口冰箱系列',
+    img: williamsImg,
+    img_alt: 'Williams Onyx 商用冷藏工作台',
+    link: 'https://www.williams-refrigeration.co.uk/',
+  },
+  {
+    title: 'Kingsway 進口冷凍庫板系列',
+    img: kingswayImg,
+    img_alt: 'Kingsway 組合式冷凍庫板',
+    link: '',
+  },
+  {
+    title: 'Angelo Po 蒸烤箱西餐爐具設備',
+    img: angelopoImg,
+    img_alt: 'Angelo Po 多功能蒸烤箱',
     link: 'https://www.angelopo.com/en/',
   },
   {
-    title: 'Robot Coupe',
-    img: 'https://www.robot-coupe.com/robot-coupe-global/products-family/image-thumb__22137__RBC_cover_540_280/Ambiance%20540x420px-Combine.webp',
-    img_alt: 'Robot Coupe',
-    link: 'https://www.robot-coupe.com/france/fr',
+    title: 'Rational 多功能蒸烤箱系列',
+    img: rationalImg,
+    img_alt: 'Rational iCombi Pro 多功能蒸烤箱',
+    link: 'https://www.rational-online.com/',
   },
   {
-    title: 'Cleveland',
-    img: 'https://www.welbilt.com/Media/Welbilt-Inc/Our-Brands/Cleveland-2018.jpg',
-    img_alt: 'Welbilt Cleveland',
-    link: 'https://www.clevelandrange.com/?__hstc=22072164.438bb38c4dd2983cd70767b5736c69da.1635995215710.1635995215710.1635995215710.1&__hssc=22072164.4.1635995215711&__hsfp=3413898664',
+    title: 'Dalla Corte 半自動咖啡機',
+    img: dallacorteImg,
+    img_alt: 'Dalla Corte EVO2 半自動義式咖啡機',
+    link: 'https://www.dallacorte.com/',
   },
   {
-    title: 'SOUTHBEND',
-    img: 'https://www.middleby.com/wp-content/uploads/2021/08/Southbend-K-12-Convection-Ovens-Hero-Image.png',
-    img_alt: 'SOUTHBEND',
-    link: 'https://southbendnc.com/',
+    title: 'MarkPhili 全爐具設備',
+    img: markphiliImg,
+    img_alt: 'MarkPhili 四口爐連焗爐西餐爐具',
+    link: 'http://en.szmark.cn/',
   },
   {
-    title: 'Blodgett',
-    img: 'http://blog.etundra.com/wp-content/Media/2014/11/blodgett-hydrovection-oven.jpg',
-    img_alt: 'Blodgett',
-    link: 'https://www.blodgett.com/',
+    title: 'Cambro 組合層架系列',
+    img: cambroImg,
+    img_alt: 'Cambro Camshelving 組合層架',
+    link: 'https://www.cambro.com/',
   },
   {
-    title: 'Pitco',
-    img: 'https://www.middleby.com/wp-content/uploads/2021/08/Middleby-Pitco-CU-Hero-Image.png',
-    img_alt: 'Pitco',
-    link: 'https://www.pitco.com/',
+    title: 'Hatco 保溫燈系列',
+    img: hatcoImg,
+    img_alt: 'Hatco Glo-Ray 食物保溫燈',
+    link: 'https://www.hatcocorp.com/',
+  },
+  {
+    title: '日本 Hoshizaki 企鵝牌製冰機',
+    img: hoshizakiImg,
+    img_alt: 'Hoshizaki 企鵝牌商用製冰機',
+    link: 'https://www.hoshizaki.com.tw/',
+  },
+  {
+    title: 'Zumex 榨汁機',
+    img: zumexImg,
+    img_alt: 'Zumex Versatile Pro 商用鮮榨柳橙汁機',
+    link: 'https://www.zumex.com/',
   },
 ]
