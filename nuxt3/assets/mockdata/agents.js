@@ -48,8 +48,8 @@ export default [
   {
     title: 'Kingsway 進口冷凍庫板系列',
     img: kingswayImg,
-    img_alt: 'Kingsway 組合式冷凍庫板',
-    link: '',
+    img_alt: 'Kingsway 組合式冷凍庫',
+    link: 'https://keentop.com.hk/',
   },
   {
     title: 'Angelo Po 蒸烤箱西餐爐具設備',
