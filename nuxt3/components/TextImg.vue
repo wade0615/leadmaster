@@ -1,0 +1,30 @@
+<template>
+  <section id="text-img" class="">
+    <div class="flex flex-col sm:flex-row items-start lg:items-center">
+      <div class="mb-10 sm:m-0 sm:w-1/3">
+        <img
+          :src="img"
+          alt="Feature image"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="flex-1 px-4 sm:px-16 sm:order-first">
+        <h3 class="mb-2 sm:mb-4 text-2xl">
+          {{ title }}
+        </h3>
+        <p class="text-base sm:text-lg">
+          {{ description }}
+        </p>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup>
+defineProps(['img', 'title', 'description'])
+</script>
+
+<style lang="sass" scoped>
+#text-img
+  position: relative
+</style>
