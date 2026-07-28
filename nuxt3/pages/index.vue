@@ -39,10 +39,10 @@
 
 <script setup>
 useSeoMeta({
-  title: '立麥餐飲設備｜廚房顧問・餐飲顧問・國際酒店廚房設備規劃',
+  title: '立麥餐飲設備有限公司｜廚房顧問・餐飲顧問・國際酒店廚房設備規劃',
   description:
     '立麥餐飲設備有限公司——專業廚房顧問與餐飲顧問公司，提供國際酒店廚房設計、HACCP 顧問輔導、酒吧與酒櫃設計、食品加工廠設計規劃，從動線規劃、設備選型到施工維保一站式服務。',
-  ogTitle: '立麥餐飲設備｜廚房顧問・餐飲顧問',
+  ogTitle: '立麥餐飲設備有限公司｜廚房顧問・餐飲顧問',
   ogDescription:
     '專業廚房顧問與餐飲顧問公司，提供國際酒店廚房設計、HACCP 顧問輔導、酒吧與酒櫃設計、食品加工廠設計規劃。',
 })
@@ -63,8 +63,8 @@ const carousel_images = [
   carouselImg_4,
 ]
 const carousel_text = {
-  title: '立麥餐飲設備',
-  title2: 'LEADMASTER KITCHEN',
+  title: '立麥餐飲設備有限公司',
+  title2: 'Leadmaster Kitchen Equipment Co.,Ltd.',
   subtitle: '最專業的酒店廚房規劃顧問',
 }
 const intro_content =
