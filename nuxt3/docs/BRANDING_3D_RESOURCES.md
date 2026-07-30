@@ -31,8 +31,46 @@
 ### 2. scroll-world — AI 影片產製 pipeline
 
 - 產出「滾動驅動的無縫運鏡落地頁」：AI 生成等距場景圖 → 生成鏡頭從場景外飛入內部的影片與轉場片段 → 前端 scrub engine 將滾動位置映射到影片時間軸。
-- Framework-agnostic（支援 Vue）；為**付費按次產製**（6 場景約 US$27），產出是影片而非即時 3D，風格為 AI 等距 diorama。
+- Framework-agnostic（支援 Vue）；為**付費按次產製**，產出是影片而非即時 3D，風格為 AI 等距 diorama。
 - 屬開發期工具，不會成為網站執行期依賴。
+
+#### 計費方式與費用估算（調查日期：2026-07-30）
+
+Skill 本身免費（MIT）、scrub engine 免費可自由嵌入；**費用全在 AI 產製環節，屬一次性成本、無月費**（Monid 為 pay-as-you-go，無訂閱、額度不歸零）。
+
+錢花在三個地方（資料來源：repo `SKILL.md`）：
+
+| 項目 | 服務 | 單價 |
+| ---- | ---- | ---- |
+| 場景靜圖 | Higgsfield（GPT Image 2）約 15 credits/張（≈US$0.8）；**有 ChatGPT 訂閱可走 Codex CLI = 免費** | 每場景 1 張 |
+| 主影片（dive） | Monid（Seedance 2.0）按 token 計價 | 1080p 8 秒 ≈ US$2.99；720p ≈ US$1.21 |
+| 轉場片（connector） | 同上 | 1080p 5 秒 ≈ US$1.87；720p ≈ US$0.76 |
+
+產量公式：N 個場景 = **N 張靜圖 ＋ (2N−1) 支影片**（N 支 dive ＋ N−1 支轉場）。Skill 規定產前必須先報價、超過餘額 70% 不得自動開跑。
+
+**套用到本站首頁動線之旅的估算（1080p 桌機版）：**
+
+| 方案 | 影片數 | 影片費 | 靜圖 | 小計 |
+| ---- | ---- | ---- | ---- | ---- |
+| 4 場景（大門→宴會廳→廚房→後場） | 7 支 | ~US$17.6 | ~US$3 | **~US$21** |
+| 5 場景（＋「拉遠升空」收尾，銜接 /about 敘事） | 9 支 | ~US$22.4 | ~US$4 | **~US$26** |
+| 6 場景（再加酒吧或宴會細節） | 11 支 | ~US$27.3 | ~US$5 | **~US$32** |
+
+**加項與風險：**
+
+1. **重跑預算**：`SKILL.md` 明載室內場景易觸發 NSFW 誤判、需預算 2–5 支重跑——本站場景幾乎全是飯店室內，此項必然發生，抓 +US$5–15。
+2. **手機直式版（9:16）為選配**：另產一條直式鏈，影片數翻倍 ≈ 影片費 ×2。
+3. **美術方向不滿意的整鏈重做**是最大成本風險，以 draft 流程規避（見下）。
+
+**省錢流程**：skill 內建 draft 層（480p ≈ US$0.3/支，或 seedance mini ≈ ¼ 價）。先用 draft 跑整鏈（約 US$3–5）確認運鏡與美術方向，滿意後才升 1080p 出正式版，把迭代成本鎖在 draft 層。
+
+**總預算建議：**
+
+- 桌機版：draft 驗證 ~US$5 ＋ 正式 5 場景 ~US$26 ＋ 重跑緩衝 ~US$8 ≈ **US$40（約 NT$1,300）以內**
+- 桌機＋手機直式：≈ **US$65–70（約 NT$2,100–2,200）**
+- 上線後無持續費用，僅剩自家影片流量；有 ChatGPT 訂閱則靜圖費歸零。
+
+參考來源：[scroll-world SKILL.md](https://github.com/oso95/scroll-world/blob/main/skills/scroll-world/SKILL.md)、[Monid — Seedance 2.0 API](https://monid.ai/blog/seedance-2)、[Segmind — Seedance 2.0 Pricing](https://www.segmind.com/models/seedance-2.0/pricing)
 
 ### 3. mint-playground / complete-shelf — 參考範例
 
